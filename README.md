@@ -6,7 +6,7 @@ Develop a new, innovative and dynamic website to serve as the online forward fac
 
 ## Team members and Roles
 
-<img src="../IMG/team diagram.png">
+<img src="./IMG/team diagram.png">
 
 
 
@@ -26,7 +26,7 @@ The second main target audience is the owner of the restaurant. The owner is in 
 
 ##Tech Stack
 
-<img src="../IMG/MERN tech stack.png">
+<img src="./IMG/MERN tech stack.png">
 
 ## Dataflow Diagram
 
@@ -34,7 +34,7 @@ The second main target audience is the owner of the restaurant. The owner is in 
 
 ## Application Architecture
 
-<img src="../IMG/Website architecture.png">
+<img src="./IMG/Website architecture.png">
 
 ## User stories
 
