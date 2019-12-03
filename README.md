@@ -56,59 +56,58 @@ The second main target audience is the owner of the restaurant. The owner is in 
 
 
 
-<img src="../IMG/home mob.png">
+<img src="./IMG/home mob.png">
 
 
 
-<img src="../IMG/menu mob.png">
+<img src="./IMG/menu mob.png">
 
 
 
-<img src="../IMG/menu2 mob.png">
+<img src="./IMG/menu2 mob.png">
 
 
 
-<img src="../IMG/mob login.png">
+<img src="./IMG/mob login.png">
 
 ### Tablet Wireframes 
 
 
 
-<img src="../IMG/home tab.png">
+<img src="./IMG/home tab.png">
 
 
 
-<img src="../IMG/menu tab.png">
+<img src="./IMG/menu tab.png">
 
 
 
-<img src="../IMG/admin sign tab.png">
+<img src="./IMG/admin sign tab.png">
 
 
 
 
 
-<img src="../IMG/admin create tab.png">
+<img src="./IMG/admin create tab.png">
 
 ###Desktop Wireframes
 
-<img src="../IMG/Home desktop.png">
+<img src="./IMG/Home desktop.png">
 
 
 
 
 
-<img src="../IMG/menu desk.png"/>
+<img src="./IMG/menu desk.png"/>
 
 
 
-<img src="../IMG/menu desk.png">
+<img src="./IMG/menu desk.png">
 
 
 
-<img src="../IMG/admin login desk.png">
+<img src="./IMG/admin login desk.png">
 
 
 
-<img src="../IMG/admin sign desk.png"/>
-
+<img src="./IMG/admin sign desk.png"/>
