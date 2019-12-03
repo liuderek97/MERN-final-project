@@ -1,68 +1,114 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# MERN Final Project 
 
-## Available Script
+## Project Mission
 
-In the project directory, you can run:
+Develop a new, innovative and dynamic website to serve as the online forward facing representative of the Saran Thai brand, people, culture, service offerings and most importantly its commercial strategic objectives. 
 
-### `yarn start`
+## Team members and Roles
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<img src="./IMG/Team diagram.png">
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+## Purpose 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The teams client for the final MERN Project is Rosie is the owner and head of operations of the Saran Thai restaurant in Wyoming Sydney. The website being developed will provide Rosie a platform to promote her business assisting her in increasing the marketability and raise public awareness of her business.  The website will also allow Rosie to customise the restaurants menu how she sees fit. The website will also provide a platform for the general public to view the menu online, and learn more about the restaurants operating hours and location.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Functionality and Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The website for customers will allow them to view the menu and filter the menu by different categories or filters, and search for different items on the menu. They will also have access to  other business information, and make reservations for themselves in advance. For the owner of the restaurant they will have access to an administrator dashboard  that will allow them to modify the menu how they see fit through basic CRUD operations, customise the theme of the website itself and confirm any reservations that have been made by customers . 
 
-### `yarn eject`
+##Target Audience
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+After conducting research on the demographics of Wyoming and the close surrounding areas the target market of the website was identified to be families and middle aged/senior individuals. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The second main target audience is the owner of the restaurant. The owner is in her mid 50's and is relatively unskilled with technology.  In order to fulfil the needs of the identified target audience the website will have a heavy focus on simplicity and ease of use.  
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+##Tech Stack
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<img src="./IMG/MERN tech stack.png">
 
-## Learn More
+## Dataflow Diagram
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Application Architecture
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+<img src="./IMG/Website architecture.png">
 
-### Analyzing the Bundle Size
+## User stories
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- As the owner of Saran Thai I want to have an admin dashboard so that I can use it to customise the items present on the menu.
 
-### Making a Progressive Web App
+- As the owner of Saran Thai I would like an authorised admin user, so that only I can edit the menus.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- As the owner of Saran Thai I would like potential customers viewing my website to view our contact information and phone number, so that they can order food with us.
 
-### Advanced Configuration
+- As a potential customer of Saran Thai I would like to view the menu online, to decide if I would like to go to the restaurant.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- As a customer of Saran Thai viewing the online website, I want to find the phone number of Saran Thai, so that I can order takeaway.
 
-### Deployment
+## Wireframes
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `yarn build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Mobile Wireframes
+
+
+
+<img src="./IMG/home mob.png">
+
+
+
+<img src="./IMG/menu mob.png">
+
+
+
+<img src="./IMG/menu2 mob.png">
+
+
+
+<img src="./IMG/mob login.png">
+
+### Tablet Wireframes 
+
+
+
+<img src="./IMG/home tab.png">
+
+
+
+<img src="./IMG/menu tab.png">
+
+
+
+<img src="./IMG/admin sign tab.png">
+
+
+
+
+
+<img src="./IMG/admin create tab.png">
+
+###Desktop Wireframes
+
+<img src="./IMG/Home desktop.png">
+
+
+
+
+
+<img src="./IMG/menu desk.png"/>
+
+
+
+<img src="./IMG/menu desk.png">
+
+
+
+<img src="./IMG/admin login desk.png">
+
+
+
+<img src="./IMG/admin sign desk.png"/>
