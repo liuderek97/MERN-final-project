@@ -6,7 +6,7 @@ Develop a new, innovative and dynamic website to serve as the online forward fac
 
 ## Team members and Roles
 
-<img src="./IMG/team diagram.png">
+<img src="./IMG/Team diagram.png">
 
 
 
@@ -24,11 +24,17 @@ After conducting research on the demographics of Wyoming and the close surroundi
 
 The second main target audience is the owner of the restaurant. The owner is in her mid 50's and is relatively unskilled with technology.  In order to fulfil the needs of the identified target audience the website will have a heavy focus on simplicity and ease of use.  
 
+
+
 ##Tech Stack
 
 <img src="./IMG/MERN tech stack.png">
 
+
+
 ## Dataflow Diagram
+
+<img src="./IMG/saran dataflow.png">
 
 
 
@@ -56,11 +62,11 @@ The second main target audience is the owner of the restaurant. The owner is in 
 
 
 
-<img src="./IMG/home mob.png">
+<p align='center'><img src="./IMG/home mob.png"></p>
 
 
 
-<img src="./IMG/menu mob.png">
+<p align='center'><img src="./IMG/menu mob.png"></p>
 
 
 
@@ -68,13 +74,13 @@ The second main target audience is the owner of the restaurant. The owner is in 
 
 
 
-<img src="./IMG/mob login.png">
+<p align='center'><img src="./IMG/mob login.png"></p>
 
 ### Tablet Wireframes 
 
 
 
-<img src="./IMG/home tab.png">
+<p align='center'><img src="./IMG/home tab.png"></p>
 
 
 
@@ -82,7 +88,7 @@ The second main target audience is the owner of the restaurant. The owner is in 
 
 
 
-<img src="./IMG/admin sign tab.png">
+<p align='center'><img src="./IMG/admin sign tab.png"></p>
 
 
 
