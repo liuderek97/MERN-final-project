@@ -66,7 +66,7 @@ The second main target audience is the owner of the restaurant. The owner is in 
 
 
 
-<p align='center'><img src="./IMG/mu mob.png"></p>
+<p align='center'><img src="./IMG/menu mob.png"></p>
 
 
 
