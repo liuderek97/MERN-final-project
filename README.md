@@ -92,8 +92,6 @@ The second main target audience is the owner of the restaurant. The owner is in 
 
 ###Desktop Wireframes
 
-
-
 <img src="../IMG/Home desktop.png">
 
 
