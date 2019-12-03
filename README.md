@@ -6,7 +6,7 @@ Develop a new, innovative and dynamic website to serve as the online forward fac
 
 ## Team members and Roles
 
-<img src="../IMG/team diagram.png">
+<img src="./IMG/team diagram.png">
 
 
 
