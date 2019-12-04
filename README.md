@@ -64,22 +64,15 @@ The second main target audience is the owner of the restaurant. The owner is in 
 
 
 <p align='center'><img src="./IMG/Annotated wirefames/mobile_homepage_user_admin.png"></p>
-
 <p align='center'><img src="./IMG/Annotated wirefames/mobile_menupage_admin.png"></p>
-
 <p align='center'><img src="./IMG/Annotated wirefames/mobile_menupage_admin.png"></p>
-
 <p align='center'><img src="./IMG/Annotated wirefames/mobile_sign_in_sign_up.png"></p>
-
 ### Tablet Wireframes 
 
 <p align='center'><img src="./IMG/Annotated wirefames/tablet_homepage_user_admin.png"></p>
 <p align='center'><img src="./IMG/Annotated wirefames/tablet_menupage_user_admin.png"></p>
-
 <p align='center'><img src="./IMG/Annotated wirefames/tablet_sign_in.png"></p>
-
 <p align='center'><img src="./IMG/Annotated wirefames/tablet_sign_up.png"></p>
-
 
 
 
@@ -89,7 +82,6 @@ The second main target audience is the owner of the restaurant. The owner is in 
 
 
 <p align='center'><img src="./IMG/Annotated wirefames/desktop_homepage_admin.png"/></p>
-
 <img src="./IMG/Annotated wirefames/desktop_homepage_user.png">
 
 
@@ -110,3 +102,30 @@ The second main target audience is the owner of the restaurant. The owner is in 
 
 <img src="./IMG/Annotated wirefames/desktop_sign_up.png">
 
+## Trello
+
+### Day 1
+
+<img src='./IMG/Trello 1.png'>
+
+### Day 2
+
+<img src='./IMG/Trello 2.png'>
+
+### Day 3
+
+<img src='./IMG/Trello 3.png'>
+
+### Day 4
+
+<img src='./IMG/Trello 4.png'>
+
+### Day 5
+
+<img src='./IMG/Trello 5.png'>
+
+
+
+### Day 6
+
+<img src='./IMG/Trello 6.png'>
