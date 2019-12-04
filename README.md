@@ -41,7 +41,7 @@ The second main target audience is the owner of the restaurant. The owner is in 
 
 ## Application Architecture
 
-<img src="./IMG/Website architecture.png">
+<img src="./IMG/Web architecture.png">
 
 ## User stories
 
