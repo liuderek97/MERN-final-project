@@ -62,58 +62,49 @@ The second main target audience is the owner of the restaurant. The owner is in 
 
 
 
-<p align='center'><img src="./IMG/home mob.png"></p>
+<p align='center'><img src="./IMG/Annotated wirefames/mobile_homepage_user_admin.png"></p>
 
+<p align='center'><img src="./IMG/Annotated wirefames/mobile_menupage_admin.png"></p>
 
-
-<p align='center'><img src="./IMG/menu mob.png"></p>
-
-
-
-<img src="./IMG/menu2 mob.png">
-
-
+<p align='center'><img src="./IMG/Annotated wirefames/mobile_menupage_admin.png"></p>
 
 <p align='center'><img src="./IMG/mob login.png"></p>
 
 ### Tablet Wireframes 
 
+<p align='center'><img src="./IMG/Annotated wirefames/tablet_homepage_user_admin.png"></p>
+<p align='center'><img src="./IMG/Annotated wirefames/tablet_menupage_user_admin.png"></p>
 
+<p align='center'><img src="./IMG/Annotated wirefames/tablet_sign_in.png"></p>
 
-<p align='center'><img src="./IMG/home tab.png"></p>
-
-
-
-<img src="./IMG/menu tab.png">
-
-
-
-<p align='center'><img src="./IMG/admin sign tab.png"></p>
+<p align='center'><img src="./IMG/Annotated wirefames/tablet_sign_up.png"></p>
 
 
 
 
-
-<img src="./IMG/admin create tab.png">
 
 ###Desktop Wireframes
 
-<img src="./IMG/Home desktop.png">
+
+
+<img src="./IMG/Annotated wirefames/desktop_homepage_admin.png"/>
+
+<img src="./IMG/Annotated wirefames/desktop_homepage_user.png">
 
 
 
 
 
-<img src="./IMG/menu desk.png"/>
+<img src="./IMG/Annotated wirefames/desktop_menupage_admin.png"/>
 
 
 
-<img src="./IMG/menu desk.png">
+<img src="./IMG/Annotated wirefames/desktop_menupage_user.png">
 
 
 
-<img src="./IMG/admin login desk.png">
+<img src="./IMG/Annotated wirefames/desktop_sign_in.png">
 
 
 
-<img src="./IMG/admin sign desk.png"/>
+<img src="./IMG/Annotated wirefames/desktop_sign_up.png">
