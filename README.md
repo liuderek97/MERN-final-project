@@ -19,7 +19,7 @@ The teams client for the final MERN Project is Rosie. Rosie is the owner and hea
 
 The website for customers will allow them to view the menu and filter the menu by different categories or filters, and search for different items on the menu. They will also have access to  other business information, and make reservations for themselves in advance. For the owner of the restaurant they will have access to an administrator dashboard  that will allow them to modify the menu how they see fit through basic CRUD operations, customise the theme of the website itself and confirm any reservations that have been made by customers . 
 
-##Target Audience
+## Target Audience
 
 After conducting research on the demographics of Wyoming and the close surrounding areas the target market of the website was identified to be families and middle aged/senior individuals. 
 
@@ -27,7 +27,7 @@ The second main target audience is the owner of the restaurant. The owner is in 
 
 
 
-##Tech Stack
+## Tech Stack
 
 <img src="./IMG/MERN tech stack.png">
 
