@@ -29,7 +29,7 @@ The second main target audience is the owner of the restaurant. The owner is in 
 
 ## Tech Stack
 
-<img src="./IMG/MERN tech stack.png">
+<img src="./IMG/techstack.png">
 
 
 
@@ -68,14 +68,12 @@ The second main target audience is the owner of the restaurant. The owner is in 
 <p align='center'><img src="./IMG/Annotated wirefames/mobile_menupage_admin.png"></p>
 <p align='center'><img src="./IMG/Annotated wirefames/mobile_sign_in_sign_up.png"></p>
 
-
 ### Tablet Wireframes 
 
 <p align='center'><img src="./IMG/Annotated wirefames/tablet_homepage_user_admin.png"></p>
 <p align='center'><img src="./IMG/Annotated wirefames/tablet_menupage_user_admin.png"></p>
 <p align='center'><img src="./IMG/Annotated wirefames/tablet_sign_in.png"></p>
 <p align='center'><img src="./IMG/Annotated wirefames/tablet_sign_up.png"></p>
-
 
 
 
