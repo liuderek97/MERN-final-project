@@ -25,11 +25,17 @@ After conducting research on the demographics of Wyoming and the close surroundi
 
 The second main target audience is the owner of the restaurant. The owner is in her mid 50's and is relatively unskilled with technology.  In order to fulfil the needs of the identified target audience the website will have a heavy focus on simplicity and ease of use.  
 
+
+
 ##Tech Stack
 
 <img src="./IMG/MERN tech stack.png">
 
+
+
 ## Dataflow Diagram
+
+<img src="./IMG/saran dataflow.png">
 
 
 
@@ -57,58 +63,50 @@ The second main target audience is the owner of the restaurant. The owner is in 
 
 
 
-<img src="./IMG/home mob.png">
+<p align='center'><img src="./IMG/Annotated wirefames/mobile_homepage_user_admin.png"></p>
 
+<p align='center'><img src="./IMG/Annotated wirefames/mobile_menupage_admin.png"></p>
 
+<p align='center'><img src="./IMG/Annotated wirefames/mobile_menupage_admin.png"></p>
 
-<img src="./IMG/menu mob.png">
-
-
-
-<img src="./IMG/menu2 mob.png">
-
-
-
-<img src="./IMG/mob login.png">
+<p align='center'><img src="./IMG/Annotated wirefames/mobile_sign_in_sign_up.png"></p>
 
 ### Tablet Wireframes 
 
+<p align='center'><img src="./IMG/Annotated wirefames/tablet_homepage_user_admin.png"></p>
+<p align='center'><img src="./IMG/Annotated wirefames/tablet_menupage_user_admin.png"></p>
 
+<p align='center'><img src="./IMG/Annotated wirefames/tablet_sign_in.png"></p>
 
-<img src="./IMG/home tab.png">
-
-
-
-<img src="./IMG/menu tab.png">
-
-
-
-<img src="./IMG/admin sign tab.png">
+<p align='center'><img src="./IMG/Annotated wirefames/tablet_sign_up.png"></p>
 
 
 
 
 
-<img src="./IMG/admin create tab.png">
-
-###Desktop Wireframes
-
-<img src="./IMG/Home desktop.png">
+### Desktop Wireframes
 
 
 
+<p align='center'><img src="./IMG/Annotated wirefames/desktop_homepage_admin.png"/></p>
 
-
-<img src="./IMG/menu desk.png"/>
-
-
-
-<img src="./IMG/menu desk.png">
+<img src="./IMG/Annotated wirefames/desktop_homepage_user.png">
 
 
 
-<img src="./IMG/admin login desk.png">
+
+
+<img src="./IMG/Annotated wirefames/desktop_menupage_admin.png"/>
 
 
 
-<img src="./IMG/admin sign desk.png"/>
+<img src="./IMG/Annotated wirefames/desktop_menupage_user.png">
+
+
+
+<img src="./IMG/Annotated wirefames/desktop_sign_in.png">
+
+
+
+<img src="./IMG/Annotated wirefames/desktop_sign_up.png">
+
