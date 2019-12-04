@@ -13,7 +13,7 @@ Develop a new, innovative and dynamic website to serve as the online forward fac
 
 ## Purpose 
 
-The teams client for the final MERN Project is Rosie is the owner and head of operations of the Saran Thai restaurant in Wyoming Sydney. The website being developed will provide Rosie a platform to promote her business assisting her in increasing the marketability and raise public awareness of her business.  The website will also allow Rosie to customise the restaurants menu how she sees fit. The website will also provide a platform for the general public to view the menu online, and learn more about the restaurants operating hours and location.
+The teams client for the final MERN Project is Rosie. Rosie is the owner and head of operations of the Saran Thai restaurant in Wyoming Sydney. The website being developed will provide Rosie a platform to promote her business assisting her in increasing the marketability and raise public awareness of her business.  The website will also allow Rosie to customise the restaurants menu how she sees fit. The website will also provide a platform for the general public to view the menu online, and learn more about the restaurants operating hours and location.
 
 ## Functionality and Features
 
