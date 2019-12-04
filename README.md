@@ -13,13 +13,13 @@ Develop a new, innovative and dynamic website to serve as the online forward fac
 
 ## Purpose 
 
-The teams client for the final MERN Project is Rosie is the owner and head of operations of the Saran Thai restaurant in Wyoming Sydney. The website being developed will provide Rosie a platform to promote her business assisting her in increasing the marketability and raise public awareness of her business.  The website will also allow Rosie to customise the restaurants menu how she sees fit. The website will also provide a platform for the general public to view the menu online, and learn more about the restaurants operating hours and location.
+The teams client for the final MERN Project is Rosie. Rosie is the owner and head of operations of the Saran Thai restaurant in Wyoming Sydney. The website being developed will provide Rosie a platform to promote her business assisting her in increasing the marketability and raise public awareness of her business.  The website will also allow Rosie to customise the restaurants menu how she sees fit. The website will also provide a platform for the general public to view the menu online, and learn more about the restaurants operating hours and location.
 
 ## Functionality and Features
 
 The website for customers will allow them to view the menu and filter the menu by different categories or filters, and search for different items on the menu. They will also have access to  other business information, and make reservations for themselves in advance. For the owner of the restaurant they will have access to an administrator dashboard  that will allow them to modify the menu how they see fit through basic CRUD operations, customise the theme of the website itself and confirm any reservations that have been made by customers . 
 
-##Target Audience
+## Target Audience
 
 After conducting research on the demographics of Wyoming and the close surrounding areas the target market of the website was identified to be families and middle aged/senior individuals. 
 
@@ -27,7 +27,7 @@ The second main target audience is the owner of the restaurant. The owner is in 
 
 
 
-##Tech Stack
+## Tech Stack
 
 <img src="./IMG/MERN tech stack.png">
 
@@ -67,6 +67,8 @@ The second main target audience is the owner of the restaurant. The owner is in 
 <p align='center'><img src="./IMG/Annotated wirefames/mobile_menupage_admin.png"></p>
 <p align='center'><img src="./IMG/Annotated wirefames/mobile_menupage_admin.png"></p>
 <p align='center'><img src="./IMG/Annotated wirefames/mobile_sign_in_sign_up.png"></p>
+
+
 ### Tablet Wireframes 
 
 <p align='center'><img src="./IMG/Annotated wirefames/tablet_homepage_user_admin.png"></p>
