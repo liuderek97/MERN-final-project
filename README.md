@@ -68,7 +68,7 @@ The second main target audience is the owner of the restaurant. The owner is in 
 
 <p align='center'><img src="./IMG/Annotated wirefames/mobile_menupage_admin.png"></p>
 
-<p align='center'><img src="./IMG/mob login.png"></p>
+<p align='center'><img src="./IMG/Annotated wirefames/mobile_sign_up.png"></p>
 
 ### Tablet Wireframes 
 
