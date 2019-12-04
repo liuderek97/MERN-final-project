@@ -26,7 +26,7 @@ The second main target audience is the owner of the restaurant. The owner is in 
 
 ## Tech Stack
 
-<img src="./IMG/MERN tech stack.png">
+<img src="./IMG/techstack.png">
 
 ## Dataflow Diagram
 
@@ -69,6 +69,7 @@ Her husband is vegetarian so Jodie would like to be able to search for all the v
 <p align='center'><img src="./IMG/Annotated wirefames/tablet_menupage_user_admin.png"></p>
 <p align='center'><img src="./IMG/Annotated wirefames/tablet_sign_in.png"></p>
 <p align='center'><img src="./IMG/Annotated wirefames/tablet_sign_up.png"></p>
+
 
 ### Desktop Wireframes
 
