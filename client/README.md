@@ -6,7 +6,7 @@ Develop a new, innovative and dynamic website to serve as the online forward fac
 
 ## Team members and Roles
 
-<img src="./IMG/Team diagram.png">
+<img src="./public/assets/images/Team diagram.png">
 
 ## Purpose 
 
@@ -26,16 +26,16 @@ The second main target audience is the owner of the restaurant. The owner is in 
 
 ## Tech Stack
 
-<img src="./IMG/techstack.png">
+<img src="./public/assets/images/techstack.png">
 
 ## Dataflow Diagram
 
-<img src="./IMG/saran dataflow.png">
+<img src="./public/assets/images/saran dataflow.png">
 
 
 ## Application Architecture
 
-<img src="./IMG/Web architecture.png">
+<img src="./public/assets/images/Web architecture.png">
 
 ## User stories
 
@@ -58,54 +58,54 @@ Her husband is vegetarian so Jodie would like to be able to search for all the v
 
 ### Mobile Wireframes
 
-<p align='center'><img src="./IMG/Annotated wirefames/mobile_homepage_user_admin.png"></p>
-<p align='center'><img src="./IMG/Annotated wirefames/mobile_menupage_admin.png"></p>
-<p align='center'><img src="./IMG/Annotated wirefames/mobile_menupage_admin.png"></p>
-<p align='center'><img src="./IMG/Annotated wirefames/mobile_sign_in_sign_up.png"></p>
+<p align='center'><img src="./public/assets/images/Annotated wirefames/mobile_homepage_user_admin.png"></p>
+<p align='center'><img src="./public/assets/images/Annotated wirefames/mobile_menupage_admin.png"></p>
+<p align='center'><img src="./public/assets/images/Annotated wirefames/mobile_menupage_admin.png"></p>
+<p align='center'><img src="./public/assets/images/Annotated wirefames/mobile_sign_in_sign_up.png"></p>
 
 ### Tablet Wireframes 
 
-<p align='center'><img src="./IMG/Annotated wirefames/tablet_homepage_user_admin.png"></p>
-<p align='center'><img src="./IMG/Annotated wirefames/tablet_menupage_user_admin.png"></p>
-<p align='center'><img src="./IMG/Annotated wirefames/tablet_sign_in.png"></p>
-<p align='center'><img src="./IMG/Annotated wirefames/tablet_sign_up.png"></p>
+<p align='center'><img src="./public/assets/images/Annotated wirefames/tablet_homepage_user_admin.png"></p>
+<p align='center'><img src="./public/assets/images/Annotated wirefames/tablet_menupage_user_admin.png"></p>
+<p align='center'><img src="./public/assets/images/Annotated wirefames/tablet_sign_in.png"></p>
+<p align='center'><img src="./public/assets/images/Annotated wirefames/tablet_sign_up.png"></p>
 
 
 ### Desktop Wireframes
 
-<p align='center'><img src="./IMG/Annotated wirefames/desktop_homepage_admin.png"/></p>
-<img src="./IMG/Annotated wirefames/desktop_homepage_user.png">
+<p align='center'><img src="./public/assets/images/Annotated wirefames/desktop_homepage_admin.png"/></p>
+<img src="./public/assets/images/Annotated wirefames/desktop_homepage_user.png">
 
-<img src="./IMG/Annotated wirefames/desktop_menupage_admin.png"/>
+<img src="./public/assets/images/Annotated wirefames/desktop_menupage_admin.png"/>
 
-<img src="./IMG/Annotated wirefames/desktop_menupage_user.png">
+<img src="./public/assets/images/Annotated wirefames/desktop_menupage_user.png">
 
-<img src="./IMG/Annotated wirefames/desktop_sign_in.png">
+<img src="./public/assets/images/Annotated wirefames/desktop_sign_in.png">
 
-<img src="./IMG/Annotated wirefames/desktop_sign_up.png">
+<img src="./public/assets/images/Annotated wirefames/desktop_sign_up.png">
 
 ## Trello
 
 ### Day 1
 
-<img src='./IMG/Trello 1.png'>
+<img src='./public/assets/images/Trello 1.png'>
 
 ### Day 2
 
-<img src='./IMG/Trello 2.png'>
+<img src='./public/assets/images/Trello 2.png'>
 
 ### Day 3
 
-<img src='./IMG/Trello 3.png'>
+<img src='./public/assets/images/Trello 3.png'>
 
 ### Day 4
 
-<img src='./IMG/Trello 4.png'>
+<img src='./public/assets/images/Trello 4.png'>
 
 ### Day 5
 
-<img src='./IMG/Trello 5.png'>
+<img src='./public/assets/images/Trello 5.png'>
 
 ### Day 6
 
-<img src='./IMG/Trello 6.png'>
+<img src='./public/assets/images/Trello 6.png'>

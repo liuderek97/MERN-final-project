@@ -1,33 +1,29 @@
 {
-  "name": "mern-final",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0",
-    "semantic-ui-react": "^0.88.1"
-  },
+  "name": "mern-final-project",
+  "version": "1.0.0",
+  "description": "## Project Mission",
+  "main": "app.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "server": "node app.js",
+    "client": "npm start --prefix client",
+    "dev": "npm start --prefix client & node app.js"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bainezydave/MERN-final-project.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bainezydave/MERN-final-project/issues"
+  },
+  "homepage": "https://github.com/bainezydave/MERN-final-project#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "mongoose": "^5.8.3",
+    "passport": "^0.4.1",
+    "passport-google-oauth2": "^0.2.0"
   }
 }
