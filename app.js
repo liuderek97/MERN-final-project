@@ -14,7 +14,8 @@ require('./server/models/category');
 mongoose.Promise = global.Promise;
 mongoose.connect( keys.mongoURI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false
 })
 .then(() => console.log('MongoDb connection'))
 .catch(err => console.log(err));
