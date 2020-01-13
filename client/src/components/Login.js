@@ -26,7 +26,7 @@ export default class Login extends Component
                 password: ""
               },
             showPassword: false,
-
+            isLoading: false,
         }
     }
 
@@ -46,6 +46,7 @@ export default class Login extends Component
     render() 
     {   
         const {showPassword, form, error} = this.state;
+        console.log(form)
         const toggleShowPassword = () => {
         this.setState({
             showPassword: !showPassword
