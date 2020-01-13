@@ -46,7 +46,8 @@ if (process.env.NODE_ENV === 'production')
 }
 
 app.use('/auth', require('./server/routes/auth') );
-app.use('/menu', require('./server/routes/product') );
+app.use('/menu', require('./server/routes/product'));
+app.use('/category', require('./server/routes/category'));
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`started server on port ${port}`));
