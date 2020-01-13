@@ -5,11 +5,7 @@ const UserSchema = new Schema({
     googleID:  String,
     email:     String,
     firstName: String,
-    lastName:  String,
-    admin: {
-        type: Boolean,
-        default: false
-    }
+    lastName:  String
 });
 
 mongoose.model("users", UserSchema);
