@@ -19,8 +19,6 @@ export default class Login extends Component
         
         this.state = {
             isAuthenticated: true,
-            email:'',
-            password:'',
             form: {
                 email: "",
                 password: ""
@@ -43,13 +41,13 @@ export default class Login extends Component
         setTimeout(cb, 100)
     }
 
-    login = () => {
-        fetch('')
+    loginUser = () => {
+        fetch('/api/')
     }
 
     render() 
     {   
-        const {showPassword, form, error} = this.state;
+        const {showPassword, form} = this.state;
         console.log(form)
         const toggleShowPassword = () => {
         this.setState({
@@ -103,7 +101,8 @@ export default class Login extends Component
                                 />
                             <Button 
                                 type='submit'
-                                style={{backgroundColor:'#40c5cd', color:'#ffffff', marginTop:'20px', marginBottom:'20px'}}                            
+                                style={{backgroundColor:'#40c5cd', color:'#ffffff', marginTop:'20px', marginBottom:'20px'}} 
+                                onClick={{loginUser()}}                           
                             >
                                 Sign in
                             </Button>
