@@ -1,4 +1,19 @@
-const verify = (req, res) => res.redirect('/');
-const logout = (req, res) => { req.logout(); res.redirect('/'); };
+const passport = require('passport');
 
-module.exports = { verify, logout };
+const login = (req, res) =>
+{
+    console.log("Logging In");
+    passport.authenticate('local', {
+        failureRedirect: '/',
+        successRedirect: '/admin'
+    })
+}
+
+const logout = (req, res) =>
+{
+    console.log("Logging Out");
+    req.logout();
+    res.redirect('/');
+};
+
+module.exports = { login, logout };

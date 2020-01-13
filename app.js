@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(session({
-        secret: 'secret',
+        secret: 'W$q4=25*8%v-}UV',
         resave: false,
         saveUninitialized: false
     })
