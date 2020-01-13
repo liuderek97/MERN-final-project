@@ -25,5 +25,40 @@ const getProductByCode = async (req, res) =>
         .catch(err => res.status(500).send(err));
 }
 
+const createProduct = (req, res) => 
+{
+    let product = new Product(req.body);
+    product.save()
+        .then(() => {
+            res.status(200).send('product added successfully');
+        })
+        .catch(err => {
+            res.status(400).send('adding new product failed');
+        });
+}
 
-module.exports = { getAllProducts, getProductById, getProductByCode };
+const updateProduct = async (req, res) => 
+{
+    let { id } = req.params;
+    let { name_en } = req.body;
+    await Product.findOneAndUpdate({_id: id }, { $set: { name_en } }, { new: true })
+        .then(data => res.json({ data }))
+        .catch(err => res.status(500).send(err))
+}
+
+const deleteProduct = async (req, res) =>
+{
+    let { id } = req.params;
+    await Product.findOneAndRemove({_id: id }, { new: false })
+        .then(data => res.json({ data }))
+        .catch(err => res.status(500).send(err))
+}
+
+module.exports = { 
+    getAllProducts, 
+    getProductById, 
+    getProductByCode, 
+    createProduct, 
+    updateProduct,
+    deleteProduct
+};
