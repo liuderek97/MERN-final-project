@@ -4,27 +4,22 @@ const bcrypt = require('bcryptjs');
 
 const register = (req, res) =>
 {
-    let { password, password2 } = req.body;
-    if (password === password2)
-    {
-        let { username, email, password, firstName, lastName } = req.body;
-        let newUser = new User({ username, email, password, firstName, lastName });
+    let { username, email, password, password2, firstName, lastName } = req.body;
 
-        bcrypt.genSalt(10, (err, salt) =>
-        {
-            bcrypt.hash(newUser.password, salt, (err, hash) =>
-            {
-                newUser.password = hash;
-                newUser.save()
-                    .then(user => res.send(user).end())
-                    .catch(err => console.log(err))
-            });
-        });            
-    }
-    else
+    if (password !== password2) res.status(500).send("{errors: \"Passwords don't match\"}").end()
+
+    let newUser = new User({ username, email, password, firstName, lastName });
+
+    bcrypt.genSalt(10, (err, salt) =>
     {
-        res.status(500).send("{errors: \"Passwords don't match\"}").end()
-    }    
+        bcrypt.hash(newUser.password, salt, (err, hash) =>
+        {
+            newUser.password = hash;
+            newUser.save()
+                .then(user => res.send(user).end())
+                .catch(err => console.log(err))
+        });
+    });            
 }
 
 const logout = (req, res) =>

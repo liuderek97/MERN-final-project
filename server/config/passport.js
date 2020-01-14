@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const User = mongoose.model('users');
 const bcrypt = require('bcryptjs');
 
-
 module.exports = passport =>
 {
     passport.use(new LocalStrategy(
@@ -11,12 +10,10 @@ module.exports = passport =>
         {
             User.findOne({ username }, (err, user) =>
             {
-                if (err) throw err;
                 if (!user) return done(null, false, { message: 'Unknown User' });
     
                 bcrypt.compare(password, user.password, (err, isMatch) =>
                 {
-                    if(err) throw err;
                     if (isMatch) return done(null, user);
                     if (!isMatch) return done(null, false, { message: 'Invalid password' });
                 });

@@ -5,11 +5,8 @@ const passport = require('passport');
 const { isLoggedIn } = require('../helpers/roles');
 
 router.post('/register', AuthController.register)
-
-router.post('/login', passport.authenticate('local'), AuthController.login);
-
-router.get('/logout', AuthController.logout);
-
-router.get('/user',  AuthController.user);
+router.post('/login',    passport.authenticate('local'), AuthController.login);
+router.get('/logout',    AuthController.logout);
+router.get('/user',      isLoggedIn, AuthController.user);
 
 module.exports = router;
