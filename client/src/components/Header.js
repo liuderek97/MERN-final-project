@@ -1,13 +1,23 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import {Menu} from 'semantic-ui-react';
+import history from '../history'
 
 export default function Header() 
 {
     return (
-        <nav>
-            <Link to="/home">Home</Link>
-            <Link to="/menu">Menu</Link>
-            <Link to="/admin">Admin</Link>
-        </nav>
+        <Menu secondary>
+            <Menu.Item
+                name='Home'
+                onClick={() => history.push({pathname:'/home'})}
+            />
+            <Menu.Item
+                name='Menu'
+                onClick={() => history.push({pathname:'/menu'})}
+            />
+            <Menu.Item
+                name='Admin'
+                onClick={() => history.push({pathname: '/admin'})}
+            />
+        </Menu>
     );
 }
