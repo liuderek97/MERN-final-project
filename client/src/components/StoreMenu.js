@@ -16,7 +16,8 @@ export default class Home extends Component
     constructor(props){
         super(props);
         this.state={
-            categories:[]
+            categories:[],
+            products:[]
         }
     }
 
@@ -26,20 +27,26 @@ export default class Home extends Component
         .then((data) => {
           let categories = data.data
           this.setState({categories:categories})
-        //   this.setState({products:})
         })
         .catch(err => {
           console.log(err)
         })
+
+        fetch('/menu/products')
+        .then(data => data.json())
+
+        .then((data) => {
+            let products = data.data
+            this.setState({products:products})
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+
     }
     render(){
-        const categories = this.state.categories
-        const categoryList = () => {
-            
-             
-            
-        }
-       
+        const {categories, products} = this.state
+        console.log(products)
         return (
             <Container style={{ width:'100%' }}>
                 <Grid columns={2}>
@@ -55,7 +62,7 @@ export default class Home extends Component
                             {categories.map((category) => {
                                 return(
                                 
-                                    <Menu.Item key={category.id}>{category.name}</Menu.Item>
+                                    <Menu.Item selectable key={category.id}>{category.name}</Menu.Item>
                                 
                                 )
                             })}
@@ -68,31 +75,23 @@ export default class Home extends Component
                                         <Table.HeaderCell textAlign='center'>Price</Table.HeaderCell>
                                 </Table>
                                 <Divider/>
-                                <div style={{marginBottom:'30px'}}>   
-                                    <div style={{marginBottom:'30px'}}>
-                                        <span style={{display:'flex', width:'100%'}}>
-                                            <h1 style={{marginRight:'68%', marginLeft:'5%'}}>Curry Puffs</h1>
-                                            <h1 style={{marginTop:'0px'}}>$9.90</h1>
-                                        </span>
-                                        <p style={{textAlign:'initial', marginLeft:'5%'}}>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                                    </div>
-                                    <Divider/>
-                                    <div style={{marginBottom:'30px'}}>
-                                        <span style={{display:'flex', width:'100%'}}>
-                                            <h1 style={{marginRight:'68%', marginLeft:'5%'}}>Curry Puffs</h1>
-                                            <h1 style={{marginTop:'0px'}}>$9.90</h1>
-                                        </span>
-                                        <p style={{textAlign:'initial', marginLeft:'5%'}}>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                                    </div>
-                                    <Divider/>
-                                    <div style={{marginBottom:'30px'}}>
-                                        <span style={{display:'flex', width:'100%'}}>
-                                            <h1 style={{marginRight:'68%', marginLeft:'5%'}}>Curry Puffs</h1>
-                                            <h1 style={{marginTop:'0px'}}>$9.90</h1>
-                                        </span>
-                                        <p style={{textAlign:'initial', marginLeft:'5%'}}>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                                    </div>
-                                </div>
+                                {
+                                    products.map((product) => {
+                                        return(
+                                            <div style={{marginBottom:'30px'}}>   
+                                                <div style={{marginBottom:'30px'}}>
+                                                    <span style={{display:'flex', width:'100%'}}>
+                                                        <h1 style={{marginRight:'68%', marginLeft:'5%'}}>{product.name_en}</h1>
+                                                        <h1 style={{marginTop:'0px'}}>$9.90</h1>
+                                                    </span>
+                                                    <p style={{textAlign:'initial', marginLeft:'5%'}}>{product.description}</p>
+                                                </div>
+                                            <Divider/>
+                                            </div>
+                                        )
+                                    })
+                                }
+                               
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
