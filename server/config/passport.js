@@ -10,12 +10,14 @@ module.exports = passport =>
         {
             User.findOne({ username }, (err, user) =>
             {
+                if (err) return done(err);
+
                 if (!user) return done(null, false, { message: 'Unknown User' });
     
                 bcrypt.compare(password, user.password, (err, isMatch) =>
                 {
                     if (isMatch) return done(null, user);
-                    if (!isMatch) return done(null, false, { message: 'Invalid password' });
+                    if (!isMatch) return done(null, false, { message: 'Incorrect password' });
                 });
             });
         }
@@ -24,5 +26,3 @@ module.exports = passport =>
     passport.serializeUser((user, done) => done(null, user.id));
     passport.deserializeUser((id, done) => User.findById(id, (err, user) => done(err, user)));
 };
-
-

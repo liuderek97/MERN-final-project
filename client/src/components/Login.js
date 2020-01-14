@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import history from '../history'
 import 
 {
     Container,
@@ -18,39 +19,56 @@ export default class Login extends Component
         super(props)
         
         this.state = {
-            isAuthenticated: true,
-            email:'',
-            password:'',
+            isAuthenticated: false,
             form: {
-                email: "",
+                username: "",
                 password: ""
-              },
+            },
             showPassword: false,
             isLoading: false,
         }
     }
 
-    authenticate = (cb) => 
+    componentDidMount() 
     {
-        this.setState({ isAuthenticated: true })
-        console.log(this.state.isAuthenticated)
-        setTimeout(cb, 100)
+        this.checkUser();
     }
 
-    signout = (cb) => 
+    checkUser = async () =>
     {
-        this.setState(() => ({ isAuthenticated: false }))
-        setTimeout(cb, 100)
+        let data = await fetch('auth/user').then(res => res.json())
+        if (data.success)
+        {
+            this.setState({ isAuthenticated: true })
+            history.push('/home');
+        }
     }
 
-    login = () => {
-        fetch('')
+    logout = async () => 
+    {
+        await fetch('auth/logout')
+            .then(() => { this.setState({ isAuthenticated: false }); this.checkUser(); })
+            .catch(err => console.log(err))
+    }
+
+    login = async () => {
+        let data = await fetch('auth/login', {
+            method: 'POST',
+            cache: 'no-cache',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(this.state.form)
+        })
+        .then(res => res.json())
+        
+        this.setState({ isAuthenticated: data.success })
+        this.checkUser();
     }
 
     render() 
     {   
-        const {showPassword, form, error} = this.state;
-        console.log(form)
+        const {showPassword} = this.state;
         const toggleShowPassword = () => {
         this.setState({
             showPassword: !showPassword
@@ -77,13 +95,14 @@ export default class Login extends Component
                         <Form>
                             <Form.Input
                                 autoFocus
-                                type="Email"
-                                name="email"
-                                label="Email"
+                                type="text"
+                                name="username"
+                                label="Username"
+                                autoComplete="username"
                                 placeholder=""
                                 onChange={(e, {value}) => {
                                     let form = this.state.form;
-                                    form.email = value;
+                                    form.username = value;
                                     this.setState({form});
                                 }}
                                     />
@@ -93,6 +112,7 @@ export default class Login extends Component
                                 name="password"
                                 placeholder="Password"
                                 label="Password"
+                                autoComplete="current-password"
                                 type={showPassword ? "text" : "password"}
                                 icon={eyeToggle}
                                 onChange={(e, {value}) => {
@@ -103,7 +123,8 @@ export default class Login extends Component
                                 />
                             <Button 
                                 type='submit'
-                                style={{backgroundColor:'#40c5cd', color:'#ffffff', marginTop:'20px', marginBottom:'20px'}}                            
+                                style={{ backgroundColor: '#40c5cd', color: '#ffffff', marginTop: '20px', marginBottom: '20px' }}
+                                onClick={() => this.login()}
                             >
                                 Sign in
                             </Button>

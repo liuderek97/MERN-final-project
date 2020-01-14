@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const passport = require('passport');
 const User = mongoose.model('users');
 const bcrypt = require('bcryptjs');
 
@@ -24,12 +25,33 @@ const register = (req, res) =>
 
 const logout = (req, res) =>
 {
-    req.logout();
-    res.redirect('/');
+    try
+    {
+        req.logout();
+        res.status(200).send("Logged out");
+    }
+    catch (err) {
+        res.status(500).send(err)
+    }
 };
 
-const login = (req, res) => res.send(req.user);
-const user = (req, res) => res.send(req.user);
+const login = (req, res, next) =>
+{
+    passport.authenticate('local', (err, user) => 
+    {
+        if (err) return next(err) 
+
+        if (!user) return res.status(401).send({ success : false, message : 'authentication failed' });
+
+        req.login(user, loginErr => 
+        {
+            if (loginErr) return next(loginErr);
+            return res.send({ success : true, message : 'authentication succeeded' });
+        });      
+    })(req, res, next);
+}
+
+const user = (req, res) => res.status(200).json({ success: true, user: req.user})
 
 module.exports = {
     login,

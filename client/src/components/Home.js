@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import {Redirect} from "react-router-dom";
 import { Button, Container } from 'semantic-ui-react';
-import { tsConstructorType } from '@babel/types';
 import history from '../history'
 export default class Home extends Component
 {
