@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import CategoryDropdown from './Dropdown'
 import { Form, Input, TextArea, Button, Select, Checkbox, SearchCategory } from 'semantic-ui-react'
 
 export default class ProductForm extends Component {
@@ -7,30 +6,65 @@ export default class ProductForm extends Component {
     super(props)
 
     this.state = {
+      form: {
         code: 0,
         name_en: '',
         name_th: '',
         price: 0,
-        takeaway: true,
-        description: ''
+        description: '',
+        category: '',
+        takeaway: false,
+      },
+      
+    
+      categories: [],
     }
   }
 
-  componentDidMount() {
+  componentDidMount(){
     fetch('/category/all')
-    .then(data => data.json())
+    .then((data) => data.json())
     .then((data) => {
       let categories = data.data
-      console.log(data.data)
+      // console.log(categories)
       this.setState({categories:categories})
-    })
-    .catch(err => {
-      console.log(err)
     })
   }
 
+  submitForm = async () => {
+    await fetch('/menu/products', {
+        method: 'POST',
+        cache: 'no-cache',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(this.state.form)
+    })
+    .then(res => res.json())
+  }
+
   render() {
+
+    let categories = this.state.categories;
+    console.log(categories)
+    console.log(this.state.form)
+    let values = []
+    categories.map((category, index) => {
+      values[index] = {id: category._id, name: category.name}
+    })
+ 
+    let categoryValues = []
+
+    values.map((value,index) => {
+      let obj ={}
+      obj['key'] = value.id
+      obj['value'] = value.id
+      obj['text'] = value.name
+      categoryValues.push(obj)
+    })
+
     return(
+
     <Form>
       <Form.Group widths='equal'>
         <Form.Field
@@ -38,30 +72,83 @@ export default class ProductForm extends Component {
           control={Input}
           label='Dish Name English'
           placeholder='Dish Name English'
+          onChange={(e, {value}) => {
+            let form = this.state.form;
+            form.name_en = value;
+            this.setState({form});
+        }}
         />
         <Form.Field
           id='form-input-control-thai-name'
           control={Input}
           label='Dish Name Thai'
           placeholder='Dish Name Thai'
+          onChange={(e, {value}) => {
+            let form = this.state.form;
+            form.name_th = value;
+            this.setState({form});
+        }}
         />
-      <Form.Field label='Select a category' control={Input}>
-        <CategoryDropdown />
-      </Form.Field>
+          <Form.Field
+          id='form-input-control-price'
+          control={Input}
+          label='Price'
+          placeholder='Price'
+          onChange={(e, {value}) => {
+            let form = this.state.form;
+            form.price = value;
+            this.setState({form});
+        }}
+        />
+        <Form.Field
+          id='form-input-control-code'
+          control={Input}
+          label='Menu Number'
+          placeholder='Code'
+          onChange={(e, {value}) => {
+            let form = this.state.form;
+            form.code = value;
+            this.setState({form});
+        }}
+        />
+      <Form.Field 
+        placeholder='Category'
+        label='Select a category' 
+        control={Select}
+        options={categoryValues}
+        onChange={(e,{value}) => {
+          let form = this.state.form;
+          form.category = value;
+          this.setState({form});
+      }} 
+      />
       </Form.Group>
       <Form.Field
         id='form-textarea-control-description'
         control={TextArea}
         label='Description'
         placeholder='Description'
+        onChange={(e,{value}) => {
+          let form = this.state.form;
+          form.description = value;
+          this.setState({form});
+      }} 
       />
       <Form.Field>
-        <Checkbox label='Available for takeaway?' />
+        <Checkbox 
+        label='Available for takeaway?'
+        onClick={() => {
+          let form = this.state.form
+          form.takeaway = !form.takeaway
+          this.setState({form})
+        }}
+         />
       </Form.Field>
       <Form.Field
         id='form-button-control-add-dish'
         control={Button}
         content='Add Dish'
+        onClick={() => this.submitForm()}
       />
     </Form>
     )

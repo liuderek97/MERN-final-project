@@ -33,7 +33,7 @@ const createProduct = (req, res) =>
             res.status(200).send('product added successfully');
         })
         .catch(err => {
-            res.status(400).send('adding new product failed');
+            res.status(400).send(err.json());
         });
 }
 
