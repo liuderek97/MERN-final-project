@@ -1,12 +1,11 @@
 const express  = require('express');
 const router = express.Router();
-const passport = require('passport');
 const AuthController = require("../controllers/auth");
-const { isUser, isGuest } = require('../helpers/roles');
+const { isLoggedIn } = require('../helpers/roles');
 
-router.get('/google', isGuest, passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/userinfo.profile', 'https://www.googleapis.com/auth/userinfo.email'] }));
-router.get('/google/callback', passport.authenticate('google', { failureRedirect: '/' }), AuthController.verify);
-
-router.get('/logout', isUser,  AuthController.logout);
+router.post('/register', AuthController.register)
+router.post('/login',    AuthController.login);
+router.get('/logout',    AuthController.logout);
+router.get('/user',      isLoggedIn, AuthController.user);
 
 module.exports = router;

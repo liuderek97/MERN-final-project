@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(session({
-        secret: 'secret',
+        secret: 'S+W42-1111&22~hd-}Ds',
         resave: false,
         saveUninitialized: false
     })

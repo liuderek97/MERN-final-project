@@ -29,12 +29,9 @@ const createProduct = (req, res) =>
 {
     let product = new Product(req.body);
     product.save()
-        .then(() => {
-            res.status(200).send('product added successfully');
-        })
-        .catch(err => {
-            res.status(400).send(err.json());
-        });
+        .then(() => res.status(200).send('product added successfully'))
+        .catch(() => res.status(400).send('adding new product failed'));
+
 }
 
 const updateProduct = async (req, res) => 
