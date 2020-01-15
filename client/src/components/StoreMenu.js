@@ -32,7 +32,7 @@ export default class Home extends Component
           console.log(err)
         })
 
-        fetch('/menu/products')
+        fetch('/menu/products/all')
         .then(data => data.json())
 
         .then((data) => {
@@ -46,7 +46,6 @@ export default class Home extends Component
     }
     render(){
         const {categories, products} = this.state
-        console.log(products)
         return (
             <Container style={{ width:'100%' }}>
                 <Grid columns={2}>
@@ -76,22 +75,37 @@ export default class Home extends Component
                                 </Table>
                                 <Divider/>
                                 {
-                                    products.map((product) => {
-                                        return(
-                                            <div style={{marginBottom:'30px'}}>   
+                                    products.map((product,index) => {
+                                        if(product.flavour){
+                                            return(
+                                                <div style={{marginBottom:'30px'}}>   
                                                 <div style={{marginBottom:'30px'}}>
                                                     <span style={{display:'flex', width:'100%'}}>
                                                         <h1 style={{marginRight:'68%', marginLeft:'5%'}}>{product.name_en}</h1>
-                                                        <h1 style={{marginTop:'0px'}}>$9.90</h1>
+                                                        {product.flavour.map((flavour) =>
+                                                                <h1 style={{marginTop:'0px'}}>{flavour.price}</h1>,
+                                                        )}
                                                     </span>
                                                     <p style={{textAlign:'initial', marginLeft:'5%'}}>{product.description}</p>
                                                 </div>
                                             <Divider/>
                                             </div>
-                                        )
+                                            ) }else{
+                                                return(    
+                                                    <div style={{marginBottom:'30px'}}>   
+                                                        <div style={{marginBottom:'30px'}}>
+                                                            <span style={{display:'flex', width:'100%'}}>
+                                                                <h1 style={{marginRight:'68%', marginLeft:'5%'}}>{product.name_en}</h1>
+                                                                <h1 style={{marginTop:'0px'}}>{product.price}</h1>
+                                                            </span>
+                                                            <p style={{textAlign:'initial', marginLeft:'5%'}}>{product.description}</p>
+                                                        </div>
+                                                    <Divider/>
+                                                    </div>
+                                                )       
+                                            }
                                     })
                                 }
-                               
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
