@@ -31,6 +31,7 @@ const createProduct = (req, res) =>
     product.save()
         .then(() => res.status(200).send('product added successfully'))
         .catch(() => res.status(400).send('adding new product failed'));
+
 }
 
 const updateProduct = async (req, res) => 

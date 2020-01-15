@@ -17,6 +17,7 @@ export default class Home extends Component
         super(props);
         this.state={
             categories:[],
+            isShowing: false,
             products:[]
         }
     }
@@ -44,11 +45,35 @@ export default class Home extends Component
         })
 
     }
+  
+  openModalHandler = () => {
+        this.setState({
+            isShowing: true
+        });
+    }
+
+    closeModalHandler = () => {
+        this.setState({
+            isShowing: false
+        });
+    }
+    
     render(){
         const {categories, products} = this.state
         console.log(products)
         return (
             <Container style={{ width:'100%' }}>
+                { this.state.isShowing 
+                    ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
+            
+                <button className="open-modal-btn" onClick={this.openModalHandler}>Open Modal</button>
+
+                <Modal
+                    className="modal"
+                    show={this.state.isShowing}
+                    close={this.closeModalHandler}>
+                        Maybe aircrafts fly very high because they don't want to be seen in plane sight?
+                </Modal>
                 <Grid columns={2}>
                     <Grid.Row>
                         <Grid.Column width={3}>
@@ -98,5 +123,4 @@ export default class Home extends Component
             </Container>
         )
     }
-    
 }
