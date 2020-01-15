@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
+import history from '../history'
 import { Form, Input, TextArea, Button, Select, Checkbox, SearchCategory } from 'semantic-ui-react'
+import { pathToFileURL } from 'url'
+import {Redirect} from 'react-router-dom'
 
 export default class ProductForm extends Component {
   constructor(props) {
@@ -15,8 +18,7 @@ export default class ProductForm extends Component {
         category: '',
         takeaway: false,
       },
-      
-    
+      created: false,
       categories: [],
     }
   }
@@ -26,7 +28,6 @@ export default class ProductForm extends Component {
     .then((data) => data.json())
     .then((data) => {
       let categories = data.data
-      // console.log(categories)
       this.setState({categories:categories})
     })
   }
@@ -40,12 +41,17 @@ export default class ProductForm extends Component {
         },
         body: JSON.stringify(this.state.form)
     })
-    .then(res => res.json())
+    .then(res => res.json(),
+      this.setState({created:true})
+    )
+    
+
+    
   }
 
   render() {
 
-    let categories = this.state.categories;
+    let {categories, created} = this.state;
     console.log(categories)
     console.log(this.state.form)
     let values = []
@@ -62,6 +68,10 @@ export default class ProductForm extends Component {
       obj['text'] = value.name
       categoryValues.push(obj)
     })
+
+    if(created){
+      history.push({pathname:'/home'})
+    } 
 
     return(
 
