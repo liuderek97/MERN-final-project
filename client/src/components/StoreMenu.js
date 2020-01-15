@@ -8,8 +8,10 @@ import {
     Segment,
     Grid,
     Table,
-    Card
+    Card,
+	Modal
 } from 'semantic-ui-react';
+import ProductForm from './ProductForm';
 
 export default class Home extends Component
 {
@@ -17,8 +19,8 @@ export default class Home extends Component
         super(props);
         this.state={
             categories:[],
-            isShowing: false,
-            products:[]
+			products:[],
+			isShowing: false,
         }
     }
 
@@ -26,16 +28,15 @@ export default class Home extends Component
         fetch('/category/all')
         .then(data => data.json())
         .then((data) => {
-          let categories = data.data
-          this.setState({categories:categories})
+        	let categories = data.data
+			this.setState({categories:categories})
         })
         .catch(err => {
-          console.log(err)
+        	console.log(err)
         })
 
         fetch('/menu/products/all')
         .then(data => data.json())
-
         .then((data) => {
             let products = data.data
             this.setState({products:products})
@@ -43,10 +44,9 @@ export default class Home extends Component
         .catch((err) => {
             console.log(err)
         })
-
     }
   
-  openModalHandler = () => {
+	openModalHandler = () => {
         this.setState({
             isShowing: true
         });
@@ -62,32 +62,22 @@ export default class Home extends Component
         const {categories, products} = this.state
         return (
             <Container style={{ width:'100%' }}>
-                { this.state.isShowing 
-                    ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
-            
-                <button className="open-modal-btn" onClick={this.openModalHandler}>Open Modal</button>
-
-                <Modal
-                    className="modal"
-                    show={this.state.isShowing}
-                    close={this.closeModalHandler}>
-                        Maybe aircrafts fly very high because they don't want to be seen in plane sight?
+				<Modal trigger={<Button primary onClick={() => {this.openModalHandler()}}>Add Dish</Button>}>
+                    <ProductForm/>
                 </Modal>
                 <Grid columns={2}>
                     <Grid.Row>
                         <Grid.Column width={3}>
                         <Menu 
-                                vertical 
-                                text
-                                style={{marginLeft:'30px', marginTop:'15px',marginRight:'0px', marginBottom:'50px'}}
+                            vertical 
+                            text
+                            style={{marginLeft:'30px', marginTop:'15px',marginRight:'0px', marginBottom:'50px'}}
                             >
                             <Menu.Item><Header as='h2'>Categories</Header></Menu.Item>
                             <Divider />
                             {categories.map((category) => {
                                 return(
-                                
-                                    <Menu.Item selectable key={category.id}>{category.name}</Menu.Item>
-                                
+                                	<Menu.Item selectable key={category.id}>{category.name}</Menu.Item>
                                 )
                             })}
                         </Menu>                        
@@ -131,6 +121,7 @@ export default class Home extends Component
                                             }
                                     })
                                 }
+
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
