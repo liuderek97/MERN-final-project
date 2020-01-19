@@ -12,6 +12,7 @@ import {
 	Modal
 } from 'semantic-ui-react';
 import ProductForm from './ProductForm';
+import  {store} from '../Store'
 
 export default class Home extends Component
 {
@@ -60,6 +61,7 @@ export default class Home extends Component
     
     render(){
         const {categories, products} = this.state
+        console.log(store.getState())
         return (
             <Container style={{ width:'100%' }}>
 				<Modal trigger={<Button primary onClick={() => {this.openModalHandler()}}>Add Dish</Button>}>

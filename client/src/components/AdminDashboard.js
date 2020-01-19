@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import {Redirect} from "react-router-dom";
+// import {Redirect} from "react-router-dom";
 import {
-    Card,
-    Menu,
+    // Card,
+    // Menu,
     Segment,
     Header
 } from 'semantic-ui-react'
