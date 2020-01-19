@@ -33,7 +33,7 @@ export default function App()
                     <Route path='/about' component={ About } />
                     <Route path='/login' component={ Login } />
                     <Route path='/admin-dashboard' component={AdminDashboard} />
-                    <PrivateRoute path='/admin' component={ Admin } />
+                    <Route path='/admin' component={ Admin } />
                     <Redirect from='*' to='/home' />
                 </Switch>
                 <Footer />

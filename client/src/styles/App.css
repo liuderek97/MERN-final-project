@@ -1,25 +1,65 @@
 .App {
-  text-align: center;
+    text-align: center;
+    font-family: 'Sinhala Sangam MN';
+    color: #FFF;
 }
+/* 
+.ui.secondary.menu {
+    position: fixed;
+    top: 0;
+    width: 101%;
+    z-index: 100;;
+    padding: 5px 30px;
+    background-color: #1B1C1D;
+}
+
+.ui.secondary.menu img {
+    margin-right: 20px;
+}
+
+.ui.secondary.menu a {
+    font-size: 18px;
+    color: #FFF;
+}
+
+.ui.secondary.menu .active.item {
+    color: #FFF;
+}
+
+.ui.secondary.menu .active.item:after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 4px;
+    top: 36px;
+    background-color: #5E27A7;
+} */
+
+.ui.container {
+    min-height: 100vh;
+}
+
+/* .wrapper {
+    width: 800px;
+    margin: 0 auto;
+}  */
+
 #hero-image{
-  /* background-color: black; */
-  height:550px;
-  color:black;
-  margin-top: 0px;
-  font-weight:normal;
-  margin-bottom: 20px;
-  font-family:Sinhala Sangam MN;
-  /* background-image: url('../styles/pad-thai.jpeg'); */
-  background-repeat: no-repeat;
-  background-size: cover;
-  
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/assets/images/home_background.jpg');
+    z-index: -1;
+    margin-bottom: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-#content h1{
-    padding-top: 15%;
-    padding-bottom:15px;
+footer {
+    height: 100px;
+    background-color: red;
 }
 
-#about-us{
-    background-color: #D1F4F6;
-}
+

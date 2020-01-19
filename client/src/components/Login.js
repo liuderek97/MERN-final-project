@@ -78,59 +78,61 @@ export default class Login extends Component
       
         return (
             <Container>
-                <Grid centered>
-                    <Segment 
-                        style={{width:'300px', height:'400px', marginTop:'20px', borderRadius:'20px 20px'}}
-                    >
-                        
-                        <Header 
-                            as='h1' 
-                            style={{color:'#40c5cd',marginTop:'20px', marginBottom:'25rpx'}}
+                <div className='wrapper'>
+                    <Grid centered>
+                        <Segment 
+                            style={{width:'300px', height:'400px', marginTop:'20px', borderRadius:'20px 20px'}}
                         >
-                            Saran Thai
-                        </Header>
-                        <Divider/>
-                        <p>Please enter admin sign in details</p>
-                        
-                        <Form>
-                            <Form.Input
-                                autoFocus
-                                type="text"
-                                name="username"
-                                label="Username"
-                                autoComplete="username"
-                                placeholder=""
-                                onChange={(e, {value}) => {
-                                    let form = this.state.form;
-                                    form.username = value;
-                                    this.setState({form});
-                                }}
-                                    />
-                            <Form.Input
-                                autoFocus
-                                fluid
-                                name="password"
-                                placeholder="Password"
-                                label="Password"
-                                autoComplete="current-password"
-                                type={showPassword ? "text" : "password"}
-                                icon={eyeToggle}
-                                onChange={(e, {value}) => {
-                                    let form = this.state.form;
-                                    form.password = value;
-                                    this.setState({form});
-                                }}
-                                />
-                            <Button 
-                                type='submit'
-                                style={{ backgroundColor: '#40c5cd', color: '#ffffff', marginTop: '20px', marginBottom: '20px' }}
-                                onClick={() => this.login()}
+                            
+                            <Header 
+                                as='h1' 
+                                style={{color:'#40c5cd',marginTop:'20px', marginBottom:'25rpx'}}
                             >
-                                Sign in
-                            </Button>
-                        </Form>
-                    </Segment>
-                </Grid>
+                                Saran Thai
+                            </Header>
+                            <Divider/>
+                            <p>Please enter admin sign in details</p>
+                            
+                            <Form>
+                                <Form.Input
+                                    autoFocus
+                                    type="text"
+                                    name="username"
+                                    label="Username"
+                                    autoComplete="username"
+                                    placeholder=""
+                                    onChange={(e, {value}) => {
+                                        let form = this.state.form;
+                                        form.username = value;
+                                        this.setState({form});
+                                    }}
+                                        />
+                                <Form.Input
+                                    autoFocus
+                                    fluid
+                                    name="password"
+                                    placeholder="Password"
+                                    label="Password"
+                                    autoComplete="current-password"
+                                    type={showPassword ? "text" : "password"}
+                                    icon={eyeToggle}
+                                    onChange={(e, {value}) => {
+                                        let form = this.state.form;
+                                        form.password = value;
+                                        this.setState({form});
+                                    }}
+                                    />
+                                <Button 
+                                    type='submit'
+                                    style={{ backgroundColor: '#40c5cd', color: '#ffffff', marginTop: '20px', marginBottom: '20px' }}
+                                    onClick={() => this.login()}
+                                >
+                                    Sign in
+                                </Button>
+                            </Form>
+                        </Segment>
+                    </Grid>
+                </div>
             </Container>
         )
     }

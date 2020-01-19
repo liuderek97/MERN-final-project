@@ -8,19 +8,3 @@ html, body {
     height: 100%;
     width: 100%;
 }
-
-body {
-  font-family: sans-serif;
-}
-
-.menu {
-    padding: 5px 30px;
-}
-
-.menu img {
-    margin-right: 20px;
-}
-
-.menu a {
-    font-size: 18px;
-}

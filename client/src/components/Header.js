@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {Menu} from 'semantic-ui-react';
-import history from '../history'
+import { Menu } from 'semantic-ui-react';
+import history from '../history';
 
 const menuItems = [
     'home',
@@ -15,29 +15,35 @@ export default class Header extends Component
     {
         super(props);
         this.state = {
-            active: 'home'
+            activeItem: 'home'
         }
     }
-    
-    handleClick(menuItem) 
-    { 
-        this.setState({ active: menuItem });
-        history.push({ pathname: menuItem });
+
+    componentWillMount()
+    {
+        let path = window.location.pathname.split('/')[1]
+        this.setState({ activeItem: path })
     }
 
+    handleClick = (e, { name }) =>
+    {
+        this.setState({ activeItem: name })
+        history.push({ pathname: name });
+    }
+    
     render() 
-    { 
-        const activeStyle = { borderBottom: 'solid 3px #5E27A7' };
+    {
+        const { activeItem } = this.state
 
         return (
-            <Menu secondary>
+            <Menu secondary >
                 <img src="./assets/images/Saran_Thai_Logo.svg" alt="logo"/>
                 {menuItems.map(menuItem => 
                     <Menu.Item
                         name={menuItem}
                         key={menuItem}
-                        style={this.state.active === menuItem ? activeStyle : {}} 
-                        onClick={this.handleClick.bind(this, menuItem)}
+                        active={activeItem === menuItem}
+                        onClick={this.handleClick}
                     />
                 )}
             </Menu>
