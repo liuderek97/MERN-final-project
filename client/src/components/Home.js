@@ -14,24 +14,39 @@ export default class Home extends Component
         return (
             <Container style={{ width: '100%' }}>
     
-                <div id='hero-image'></div>
-    
-                <div className='wrapper'>
+                <div id="home-hero">
+
+                    <div id='hero-image'></div>
 
                     <h1>Saran Thai</h1>
-                    <Button primary size='huge'
-                        onClick={() => history.push({pathname:'/menu',
-                            state:{ from: this.props.location.pathname }
-                        })}>Menu
-                    </Button> 
+                    <div>
+                        <Button primary size='huge' className="inverted"
+                            onClick={() => history.push({pathname:'/menu',
+                                state:{ from: this.props.location.pathname }
+                            })}>View Menu
+                        </Button> 
 
-                    <Button primary size='huge'
-                        onClick={() => history.push({pathname:'/about',
-                            state:{ from: this.props.location.pathname }
-                        })}>About
-                    </Button> 
-                    
+                    </div>
+                        
                 </div>
+                    
+                <div style={{width: "100%", display: "flex"}}>
+                    <div class="homePanel" id="cafe">
+                        Cafe coming soon
+                    </div>
+
+                    <div class="homePanel" id="booking">
+                        Bookings available <br />
+                        Contact us to book now
+                        <Button primary size='huge' className="inverted"
+                            onClick={() => history.push({pathname:'/about',
+                                state:{ from: this.props.location.pathname }
+                            })}>Contact Us
+                        </Button> 
+                    </div>
+                </div>
+
+
             </Container>
         )
     }  
