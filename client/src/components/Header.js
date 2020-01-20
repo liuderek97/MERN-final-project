@@ -4,18 +4,14 @@ import history from '../history'
 import {store} from '../Store'
 import {Link, NavLink} from "react-router-dom";
 import _ from 'lodash';
-import {connect} from "react-redux";
-
-
-
-
- 
+import {connect} from "react-redux"; 
 class Header extends Component
 {
     constructor(props)
     {
         super(props);
         this.state = {
+
             active: 'home',
             refresh: false
         }
@@ -38,6 +34,7 @@ class Header extends Component
 
         if(!this.isEmpty(user)){
             menuItems = [...menuItems, {text: 'Admin', to: '/admin', icon: 'lock'}];  
+
         }
 
         const uniqueMenuItems = _.uniqBy([...menuItems, ...menuItems], item => item.to);
@@ -49,19 +46,25 @@ class Header extends Component
             </Menu.Item>
         ))
     }
-    
-    handleClick(menuItem) 
-    { 
-        this.setState({ active: menuItem });
-        history.push({ pathname: menuItem });
+
+    componentWillMount()
+    {
+        let path = window.location.pathname.split('/')[1]
+        this.setState({ activeItem: path })
     }
 
+    handleClick = (e, { name }) =>
+    {
+        this.setState({ activeItem: name })
+        history.push({ pathname: name });
+    }
+    
     render() 
-    { 
-        const activeStyle = { borderBottom: 'solid 3px #5E27A7' };
+    {
+        const { activeItem } = this.state
 
         return (
-            <Menu secondary>
+            <Menu secondary >
                 <img src="./assets/images/Saran_Thai_Logo.svg" alt="logo"/>
                 {this.makeMenuItems()}
             </Menu>

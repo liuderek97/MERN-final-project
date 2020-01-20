@@ -1,25 +1,133 @@
 .App {
-  text-align: center;
+    text-align: center;
+    font-family: 'Sinhala Sangam MN';
 }
+
+
+.ui.primary.button {
+    background-color: #1B1C1D;
+    width: 180px;
+    height: 60px;
+}
+
+.ui.primary.button.inverted {
+    background-color: #FFF;
+    color: #1B1C1D;
+}
+
+.ui.secondary.menu {
+    position: fixed;
+    top: 0;
+    width: 101%;
+    z-index: 100;;
+    padding: 5px 30px;
+    background-color: #1B1C1D;
+}
+
+.ui.secondary.menu img {
+    margin-right: 20px;
+}
+
+.ui.secondary.menu a {
+    font-size: 18px;
+    color: #FFF;
+}
+
+.ui.secondary.menu .active.item:hover, 
+.ui.secondary.menu a.item:hover {
+    color: #8d38ff;
+}
+
+.ui.secondary.menu a.item:active {
+    color: inherit;
+}
+
+.ui.secondary.menu .active.item {
+    color: #FFF;
+}
+
+.ui.secondary.menu .active.item:after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 4px;
+    top: 36px;
+    background-color: #8d38ff;
+}
+
+.ui.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+}
+
+#home-hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#home-hero h1 {
+    font-size: 7rem;
+    font-weight: bolder;
+    -webkit-text-stroke: 2px #1B1C1D;
+    text-stroke: 2px #1B1C1D;
+}
+
 #hero-image{
-  /* background-color: black; */
-  height:550px;
-  color:black;
-  margin-top: 0px;
-  font-weight:normal;
-  margin-bottom: 20px;
-  font-family:Sinhala Sangam MN;
-  /* background-image: url('../styles/pad-thai.jpeg'); */
-  background-repeat: no-repeat;
-  background-size: cover;
-  
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/assets/images/home_background.jpg');
+    z-index: -1;
+    margin-bottom: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-#content h1{
-    padding-top: 15%;
-    padding-bottom:15px;
+.homePanel {
+    width: 50%;
+    height: 50vh;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #FFF;
+    font-size: 52px;
+    line-height: 60px;
+    -webkit-text-stroke: 1px #1B1C1D;
+    text-stroke: 1px #1B1C1D;
+    font-weight: bolder;
 }
 
-#about-us{
-    background-color: #D1F4F6;
+#cafe {
+    background: url('/assets/images/cafe-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#booking {
+    background: url('/assets/images/booking-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+footer {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1B1C1D;
+    color: #FFF;
 }
