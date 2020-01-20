@@ -11,7 +11,7 @@ import
     Divider,
     Icon
 } from 'semantic-ui-react';
-import {setToken, storeUserDetails} from './auth/actions';
+import {setToken, storeUserDetails, removeToken, removeUserDetails} from './auth/actions';
 import {store} from '../Store'
 
 export default class Login extends Component 
@@ -47,6 +47,7 @@ export default class Login extends Component
             store.dispatch(setToken(data.user._id));
             store.dispatch(storeUserDetails(data.user));
             history.push('/home');
+            this.forceUpdate()
         }
     }
 
@@ -55,6 +56,7 @@ export default class Login extends Component
         await fetch('auth/logout')
             .then(() => { this.setState({ isAuthenticated: false }); this.checkUser(); })
             .catch(err => console.log(err))
+            this.forceUpdate()
     }
 
     login = async () => {
