@@ -47,7 +47,7 @@ class Header extends Component
         ))
     }
 
-    componentWillMount()
+    componentDidMount()
     {
         let path = window.location.pathname.split('/')[1]
         this.setState({ activeItem: path })
@@ -55,13 +55,13 @@ class Header extends Component
 
     handleClick = (e, { name }) =>
     {
-        this.setState({ activeItem: name })
+        this.setState({ active: name })
         history.push({ pathname: name });
     }
     
     render() 
     {
-        const { activeItem } = this.state
+        const { active } = this.state
 
         return (
             <Menu secondary >

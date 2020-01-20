@@ -1,18 +1,14 @@
 import React,{Component} from 'react';
 import { 
-    Button,
     Container,
     Menu,
     Header,
     Divider,
-    Segment,
     Grid,
     Table,
-    Card,
-	Modal
 } from 'semantic-ui-react';
-import ProductForm from './ProductForm';
 import  {store} from '../Store'
+import AdminDashboard from '../components/AdminDashboard'
 
 
 
@@ -69,9 +65,7 @@ export default class Home extends Component
         let adminButton = () => {
             if(!this.isEmpty(user)){
                 return(
-                    <Container>
-                        <Button primary>Add Item</Button>
-                    </Container>
+                   <AdminDashboard/>
                 )
             }
         }
