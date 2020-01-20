@@ -46,7 +46,7 @@ export default class Login extends Component
             console.log(data.user._id)
             store.dispatch(setToken(data.user._id));
             store.dispatch(storeUserDetails(data.user));
-            history.push('/home');
+            history.push('/admin');
             this.forceUpdate()
         }
     }
