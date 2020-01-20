@@ -49,7 +49,7 @@ export default class Home extends Component
     
     render(){
         const {categories, products} = this.state
-        console.log(store.getState())
+        console.log(store.getState().user)
         return (
             <Container style={{ width:'100%' }}>
                 <Grid columns={2}>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Input, TextArea, Button, Select, Checkbox, SearchCategory } from 'semantic-ui-react'
+import { Form, Input, Button} from 'semantic-ui-react'
 
 export default class CategoryForm extends Component {
   constructor(props) {
@@ -40,13 +40,13 @@ export default class CategoryForm extends Component {
             this.setState({form});
           }}
           />
-          <Form.Field
+          </Form.Group>
+          <Button
             id='form-button-control-create-category'
             control={Button}
             content='Create Category'
             onClick={() => this.submitForm()}
           />
-        </Form.Group>
       </Form>
     )
   }

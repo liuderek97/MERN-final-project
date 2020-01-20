@@ -118,6 +118,7 @@ export default class ProductForm extends Component {
             this.setState({form});
         }}
         />
+              </Form.Group>
       <Form.Field 
         placeholder='Category'
         label='Select a category' 
@@ -129,7 +130,6 @@ export default class ProductForm extends Component {
           this.setState({form});
       }} 
       />
-      </Form.Group>
       <Form.Field
         id='form-textarea-control-description'
         control={TextArea}
