@@ -44,9 +44,6 @@ export default class ProductForm extends Component {
     .then(res => res.json(),
       this.setState({created:true})
     )
-    
-
-    
   }
 
   render() {
@@ -70,7 +67,7 @@ export default class ProductForm extends Component {
     })
 
     if(created){
-      history.push({pathname:'/home'})
+      history.push({pathname:'/menu'})
     } 
 
     return(
