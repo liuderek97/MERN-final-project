@@ -48,6 +48,7 @@ export default function App()
                 </Router>
             </PersistGate>
         </Provider>
+
     );
 }
 
