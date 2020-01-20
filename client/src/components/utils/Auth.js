@@ -31,9 +31,10 @@ export const loggedIn = () => {
 };
 
 export const logout = () => {
-  history.push("/login");
+  fetch('auth/logout')
   store.dispatch(removeToken());
   store.dispatch(removeUserDetails());
+  history.push("/login");
 };
 
 export const fetchUserDetails = () => {

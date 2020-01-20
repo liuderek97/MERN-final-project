@@ -1,22 +1,50 @@
 import React, { Component } from 'react';
-import { Menu } from 'semantic-ui-react';
-import history from '../history';
-
-const menuItems = [
-    'home',
-    'menu',
-    'about',
-    'admin'
- ];
- 
-export default class Header extends Component
+import {Menu, Icon} from 'semantic-ui-react';
+import history from '../history'
+import {store} from '../Store'
+import {Link, NavLink} from "react-router-dom";
+import _ from 'lodash';
+import {connect} from "react-redux"; 
+class Header extends Component
 {
     constructor(props)
     {
         super(props);
         this.state = {
-            activeItem: 'home'
+
+            active: 'home',
+            refresh: false
         }
+    }
+
+    isEmpty(obj) {
+        for(var key in obj) {
+            if(obj.hasOwnProperty(key))
+                return false;
+        }
+        return true;
+    }
+    
+
+    makeMenuItems = () => {
+        const {user} = store.getState()
+        console.log(user)
+        let menuItems = [{text:'Home', to:'/home'}, {text:'Menu', to:'/menu'}, {text:'About', to:'/about'}]
+
+
+        if(!this.isEmpty(user)){
+            menuItems = [...menuItems, {text: 'Admin', to: '/admin', icon: 'lock'}];  
+
+        }
+
+        const uniqueMenuItems = _.uniqBy([...menuItems, ...menuItems], item => item.to);
+
+        return uniqueMenuItems.map(({to, icon, text}) => (
+            <Menu.Item as={NavLink} to={to} key={to} selected={history.location.pathname === to}>
+            {icon && <Icon name={icon}/>}
+            {text}
+            </Menu.Item>
+        ))
     }
 
     componentWillMount()
@@ -38,15 +66,9 @@ export default class Header extends Component
         return (
             <Menu secondary >
                 <img src="./assets/images/Saran_Thai_Logo.svg" alt="logo"/>
-                {menuItems.map(menuItem => 
-                    <Menu.Item
-                        name={menuItem}
-                        key={menuItem}
-                        active={activeItem === menuItem}
-                        onClick={this.handleClick}
-                    />
-                )}
+                {this.makeMenuItems()}
             </Menu>
         );    
     }
 }
+export default connect(({user}) => ({user}))(Header);
