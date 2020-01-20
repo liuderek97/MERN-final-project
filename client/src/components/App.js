@@ -32,7 +32,7 @@ export default function App()
                     <Route path='/menu' component={ StoreMenu } />
                     <Route path='/about' component={ About } />
                     <Route path='/login' component={ Login } />
-                    <Route path='/admin-dashboard' component={AdminDashboard} />
+                    <Route path='/admin-dashboard' component={ AdminDashboard } />
                     <PrivateRoute path='/admin' component={ Admin } />
                     <Redirect from='*' to='/home' />
                 </Switch>
