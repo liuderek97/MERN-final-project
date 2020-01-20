@@ -14,6 +14,8 @@ import {
 import ProductForm from './ProductForm';
 import  {store} from '../Store'
 
+
+
 export default class Home extends Component
 {
     constructor(props){
@@ -45,13 +47,39 @@ export default class Home extends Component
         .catch((err) => {
             console.log(err)
         })
+
     }
-    
+
+    isEmpty(obj) {
+        for(var key in obj) {
+            if(obj.hasOwnProperty(key))
+                return false;
+        }
+        return true;
+    }
+
+ 
     render(){
         const {categories, products} = this.state
-        console.log(store.getState().user)
+        let {user} = store.getState()
+        console.log(user)
+        console.log(this.isEmpty(user))
+    
+        
+        let adminButton = () => {
+            if(!this.isEmpty(user)){
+                return(
+                    <Container>
+                        <Button primary>Add Item</Button>
+                    </Container>
+                )
+            }
+        }
+
+
         return (
             <Container style={{ width:'100%' }}>
+                {adminButton()}
                 <Grid columns={2}>
                     <Grid.Row>
                         <Grid.Column width={3}>

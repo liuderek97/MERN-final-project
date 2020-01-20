@@ -10,6 +10,11 @@ import Admin from './Admin';
 import Login from './Login';
 import AdminDashboard from './AdminDashboard';
 import history from '../history'
+import {PersistGate} from 'redux-persist/integration/react';
+import {store, persistor} from '../Store';
+import {Provider} from 'react-redux'
+
+
 
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -20,25 +25,30 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
     )} />
 )
 
-
 export default function App() 
 {
     return (
-        <Router history={history}>
-            <div className='App'>
-                <Header />
-                <Switch>
-                    <Route path='/home' component={ Home } />
-                    <Route path='/menu' component={ StoreMenu } />
-                    <Route path='/about' component={ About } />
-                    <Route path='/login' component={ Login } />
-                    <Route path='/admin-dashboard' component={ AdminDashboard } />
-                    <PrivateRoute path='/admin' component={ Admin } />
-                    <Redirect from='*' to='/home' />
-                </Switch>
-                <Footer />
-            </div>
-        </Router>
+        <Provider store={store}>
+            <PersistGate
+                persistor={persistor}>
+                <Router history={history}>
+                    <div className='App'>
+                        <Header />
+                        <Switch>
+                            <Route path='/home' component={ Home } />
+                            <Route path='/menu' component={ StoreMenu } />
+                            <Route path='/about' component={ About } />
+                            <Route path='/login' component={ Login } />
+                            <Route path='/admin-dashboard' component={AdminDashboard} />
+                            <Route path='/admin' component={ Admin } />
+                            <Redirect from='*' to='/home' />
+                        </Switch>
+                        <Footer />
+                    </div>
+                </Router>
+            </PersistGate>
+        </Provider>
+
     );
 }
 
