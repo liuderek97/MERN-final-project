@@ -39,10 +39,10 @@
     min-height: 100vh;
 }
 
-/* .wrapper {
+.wrapper {
     width: 800px;
     margin: 0 auto;
-}  */
+} 
 
 #hero-image{
     position: absolute;
