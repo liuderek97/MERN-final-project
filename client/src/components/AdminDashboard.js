@@ -26,14 +26,25 @@ export default class AdminDashboard extends Component {
             isShowing: false
         });
     }
+  
     render(){
         return(
             <Segment>
-                <Modal trigger={<Button primary onClick={() => {this.openModalHandler()}}>Add Dish</Button>}>
+                <Modal 
+                dimmer={'inverted'}
+                centered={false}
+                trigger={<Button primary onClick={() => {this.openModalHandler('inverted')}}>Add Dish</Button>}>
+                <Modal.Content>
                     <ProductForm/>
+                </Modal.Content>
                 </Modal>
-                <Modal trigger={<Button primary onClick={() => {this.openModalHandler()}}>Create Category</Button>}>
-                    <CategoryForm/>
+                <Modal 
+                dimmer={'inverted'}
+                centered={false}
+                trigger={<Button primary onClick={() => {this.openModalHandler()}}>Create Category</Button>}>
+                    <Modal.Content>
+                        <CategoryForm/>
+                    </Modal.Content>
                 </Modal>
             </Segment>
         )
