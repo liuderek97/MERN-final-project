@@ -9,7 +9,8 @@ import {
     Menu
 } from 'semantic-ui-react';
 import { logout } from './utils/Auth';
-import AdminDashboard from './AdminDashboard'
+import AdminDashboard from '../components/AdminDashboard'
+import DeleteModal from './DeleteModal'
 import {store} from '../Store'
 
 export default class Admin extends Component
@@ -100,7 +101,7 @@ export default class Admin extends Component
                                     </Table.Row>
                                 </Table.Header>
                             </Table>
-                            <Divider/>
+                            <Divider hidden/>
                                 {
                                     products.map((product,index) => {
                                         if(product.flavour){
@@ -114,6 +115,11 @@ export default class Admin extends Component
                                                             )}
                                                         </span>
                                                         <p style={{textAlign:'initial', marginLeft:'5%'}}>{product.description}</p>
+                                                        <DeleteModal 
+                                                            id={product._id}
+                                                            name={product.name_en}
+
+                                                        />
                                                     </div>
                                                 <Divider/>
                                                 </div>
@@ -126,6 +132,10 @@ export default class Admin extends Component
                                                                 <h1 style={{marginTop:'0px'}}>${product.price}</h1>
                                                             </span>
                                                             <p style={{textAlign:'initial', marginLeft:'5%'}}>{product.description}</p>
+                                                            <DeleteModal
+                                                                id={product._id}
+                                                                name={product.name_en}
+                                                            />
                                                         </div>
                                                     <Divider/>
                                                     </div>
