@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 // import {Redirect} from "react-router-dom";
 import {
-    // Card,
-    // Menu,
     Segment,
-    Header,
     Modal,
     Button
 } from 'semantic-ui-react'
@@ -12,9 +9,7 @@ import ProductForm from './ProductForm'
 import CategoryForm from './CategoryForm'
 
 export default class AdminDashboard extends Component {
-	constructor(props){
-		super(props);
-    }
+
 	openModalHandler = () => {
         this.setState({
             isShowing: true

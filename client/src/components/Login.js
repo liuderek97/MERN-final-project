@@ -11,7 +11,7 @@ import
     Divider,
     Icon
 } from 'semantic-ui-react';
-import {setToken, storeUserDetails, removeToken, removeUserDetails} from './auth/actions';
+import {setToken, storeUserDetails } from './auth/actions';
 import {store} from '../Store'
 
 export default class Login extends Component 
@@ -39,11 +39,9 @@ export default class Login extends Component
     checkUser = async () =>
     {
         let data = await fetch('auth/user').then(res => res.json())
-        console.log(data)
         if (data.success)
         {
             this.setState({ isAuthenticated: true })
-            console.log(data.user._id)
             store.dispatch(setToken(data.user._id));
             store.dispatch(storeUserDetails(data.user));
             history.push('/admin');

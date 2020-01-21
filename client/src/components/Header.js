@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Menu, Icon} from 'semantic-ui-react';
 import history from '../history'
 import {store} from '../Store'
-import {Link, NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import _ from 'lodash';
 import {connect} from "react-redux"; 
 class Header extends Component
@@ -47,7 +47,7 @@ class Header extends Component
         ))
     }
 
-    componentWillMount()
+    componentDidMount()
     {
         let path = window.location.pathname.split('/')[1]
         this.setState({ activeItem: path })
@@ -61,8 +61,6 @@ class Header extends Component
     
     render() 
     {
-        const { activeItem } = this.state
-
         return (
             <Menu secondary >
                 <img src="./assets/images/Saran_Thai_Logo.svg" alt="logo"/>
