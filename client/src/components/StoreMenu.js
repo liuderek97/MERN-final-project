@@ -8,7 +8,6 @@ import {
     Table
 } from 'semantic-ui-react';
 import  {store} from '../Store'
-import AdminDashboard from '../components/AdminDashboard'
 
 export default class Home extends Component
 {
@@ -53,26 +52,15 @@ export default class Home extends Component
     render(){
         const {categories, products} = this.state
         let {user} = store.getState()
-            
-        let adminButton = () => {
-            if(!this.isEmpty(user)){
-                return(
-                   <AdminDashboard/>
-                )
-            }
-        }
-
-
         return (
             <Container style={{ width:'100%' }}>
-                {adminButton()}
                 <Grid columns={2}>
                     <Grid.Row>
                         <Grid.Column width={3}>
                             <Menu 
                                 vertical 
                                 text
-                                style={{marginLeft:'30px', marginTop:'15px',marginRight:'0px', marginBottom:'50px'}}
+                                style={{marginLeft:'30px', marginTop:'15px',marginRight:'350px', marginBottom:'50px'}}
                                 >
                                 <Menu.Item><Header as='h2'>Categories</Header></Menu.Item>
                                 <Divider />
@@ -94,7 +82,7 @@ export default class Home extends Component
                                     </Table.Row>
                                 </Table.Header>
                             </Table>
-                            <Divider/>
+                            <Divider hidden/>
                                 {
                                     products.map((product,index) => {
                                         if(product.flavour){

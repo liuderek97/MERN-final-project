@@ -33,7 +33,7 @@ class Header extends Component
 
 
         if(!this.isEmpty(user)){
-            menuItems = [...menuItems, {text: 'Admin', to: '/admin', icon: 'lock'}];  
+            menuItems = [...menuItems, {text: 'Admin', to: '/admin'}];  
 
         }
 
