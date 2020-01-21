@@ -18,8 +18,7 @@ import {
     
 } from 'semantic-ui-react'
 import history from '../history'
-import { promised } from 'q';
-import ProductForm from './ProductForm';
+
 
 export default class EditModal extends Component {
 	constructor(props){
