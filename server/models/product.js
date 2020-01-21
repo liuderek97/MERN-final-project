@@ -44,7 +44,8 @@ const MenuSchema = new Schema({
     },
     category: [{
         type: Schema.Types.ObjectId,
-        ref: "categories"
+        ref: "categories",
+        required: true
     }]
 });
 
