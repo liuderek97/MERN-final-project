@@ -17,7 +17,7 @@ import {Provider} from 'react-redux'
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
     <Route {...rest} render={(props) => (
-        Login.isAuthenticated === true
+        store.getState().user.hasOwnProperty('_id')
         ? <Component {...props} />
         : <Redirect to={{ pathname: '/home', state: { from: props.location } }} />
     )} />
@@ -38,7 +38,7 @@ export default function App()
                             <Route path='/about' component={ About } />
                             <Route path='/login' component={ Login } />
                             <Route path='/admin-dashboard' component={AdminDashboard} />
-                            <Route path='/admin' component={ Admin } />
+                            <PrivateRoute path='/admin' component={ Admin } />
                             <Redirect from='*' to='/home' />
                         </Switch>
                         <Footer />
