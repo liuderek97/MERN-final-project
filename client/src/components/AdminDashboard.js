@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 import {
     Segment,
     Modal,
-    Button
+    Button,
+    Grid,
+    Divider
 } from 'semantic-ui-react'
 import ProductForm from './ProductForm'
 import CategoryForm from './CategoryForm'
@@ -24,23 +26,32 @@ export default class AdminDashboard extends Component {
   
     render(){
         return(
-            <Segment>
-                <Modal 
-                dimmer={'inverted'}
-                centered={false}
-                trigger={<Button primary onClick={() => {this.openModalHandler('inverted')}}>Add Dish</Button>}>
-                <Modal.Content>
-                    <ProductForm/>
-                </Modal.Content>
-                </Modal>
-                <Modal 
-                dimmer={'inverted'}
-                centered={false}
-                trigger={<Button primary onClick={() => {this.openModalHandler()}}>Create Category</Button>}>
-                    <Modal.Content>
-                        <CategoryForm/>
-                    </Modal.Content>
-                </Modal>
+            <Segment style={{marginTop:'30px'}}>
+                <Grid columns={2} stackable textAlign='center'>
+                <Divider vertical>Or</Divider>
+                    <Grid.Row>
+                        <Grid.Column>
+                            <Modal 
+                            dimmer={'inverted'}
+                            centered={false}
+                            trigger={<Button primary styling={{marginTop:'10px'}} onClick={() => {this.openModalHandler('inverted')}}>Add Dish</Button>}>
+                            <Modal.Content>
+                                <ProductForm/>
+                            </Modal.Content>
+                            </Modal>
+                        </Grid.Column>
+                        <Grid.Column>
+                            <Modal 
+                            dimmer={'inverted'}
+                            centered={false}
+                            trigger={<Button primary onClick={() => {this.openModalHandler()}}>Create Category</Button>}>
+                                <Modal.Content>
+                                    <CategoryForm/>
+                                </Modal.Content>
+                            </Modal>
+                        </Grid.Column>
+                    </Grid.Row>
+                    </Grid>
             </Segment>
         )
     }
