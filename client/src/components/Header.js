@@ -55,7 +55,7 @@ class Header extends Component
 
     handleClick = (e, { name }) =>
     {
-        this.setState({ activeItem: name })
+        this.setState({ active: name })
         history.push({ pathname: name });
     }
     
