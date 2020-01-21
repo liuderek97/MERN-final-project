@@ -71,10 +71,10 @@ export default class EditModal extends Component {
         res.json()
         console.log(res)
         if(res.status === 400){
-          message = 'The product could not be deleted please try again'
+          message = 'The product could not be edited please try again'
           showError =true
         }else if(res.status === 200){
-          message = 'Congratulation the product has been deleted successfully'
+          message = 'Congratulation the product has been edited successfully'
           showMessage = true;
         }
         this.setState({
