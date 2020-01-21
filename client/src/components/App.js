@@ -15,8 +15,6 @@ import {store, persistor} from '../Store';
 import {Provider} from 'react-redux'
 
 
-
-
 const PrivateRoute = ({ component: Component, ...rest }) => (
     <Route {...rest} render={(props) => (
         Login.isAuthenticated === true

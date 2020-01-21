@@ -96,9 +96,9 @@
 }
 
 .homePanel {
-    width: 50%;
     height: 50vh;
     display: inline-flex;
+    flex-grow: 1;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -130,4 +130,12 @@ footer {
     align-items: center;
     background-color: #1B1C1D;
     color: #FFF;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .ui.container {
+        margin-left: 0!important;
+        margin-right: 0!important;
+    }
 }
