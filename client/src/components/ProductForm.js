@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import history from '../history'
-import { Form, Input, TextArea, Button, Select, Checkbox, SearchCategory } from 'semantic-ui-react'
-import { pathToFileURL } from 'url'
-import {Redirect} from 'react-router-dom'
+import { Form, Input, TextArea, Button, Select, Checkbox } from 'semantic-ui-react'
 
 export default class ProductForm extends Component {
   constructor(props) {
@@ -49,8 +47,6 @@ export default class ProductForm extends Component {
   render() {
 
     let {categories, created} = this.state;
-    console.log(categories)
-    console.log(this.state.form)
     let values = []
     categories.map((category, index) => {
       values[index] = {id: category._id, name: category.name}
@@ -58,7 +54,7 @@ export default class ProductForm extends Component {
  
     let categoryValues = []
 
-    values.map((value,index) => {
+    values.map((value) => {
       let obj ={}
       obj['key'] = value.id
       obj['value'] = value.id

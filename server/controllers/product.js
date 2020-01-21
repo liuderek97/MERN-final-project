@@ -27,13 +27,15 @@ const getProductByCode = async (req, res) =>
 
 const createProduct = (req, res) => 
 {
-    req.body.category = `ObjectId(${req.body.category})`
-    console.log(req.body)
     let product = new Product(req.body);
-    product.save()
-        .then(() => res.status(200).send('product added successfully'))
-        .catch(() => res.status(400).send('adding new product failed'));
 
+    product.save()
+        .then(() => res.status(200).json({ "success": true, "message": "product added successfully" }))
+        .catch((err) =>
+        {
+            console.log(err)
+            res.status(400).json({ "success": false, "message": "product not added" })
+        })
 }
 
 const updateProduct = async (req, res) => 
