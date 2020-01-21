@@ -30,8 +30,7 @@ export default class AdminDashboard extends Component {
     close = () => this.setState({ open: false })
 
     deleteItem = () => {
-        console.log('hi')
-            fetch(`/menu/products/id/${this.state.id}`,{
+            fetch(`menu/products/id/${this.state.id}`,{
                 method:'DELETE',
             })
     }
@@ -66,7 +65,7 @@ export default class AdminDashboard extends Component {
                 <Grid centered>
                     <Button
                         style={{marginTop:'20px', marginBottom:'20px'}}
-                        onClick={this.deleteItem()}
+                        onClick={() => {this.deleteItem()}}
                         negative
                         content='Delete dish'
                     />

@@ -97,7 +97,7 @@ class StoreMenu extends Component
                         <Menu 
                             vertical 
                             text
-                            style={{marginLeft:'30px', marginTop:'15px',marginRight:'0px', marginBottom:'50px'}}
+                            style={{marginLeft:'30px', marginTop:'15px',marginRight:'20px', marginBottom:'50px'}}
                             >
                             <Menu.Item><Header as='h2'>Categories</Header></Menu.Item>
                             <Divider />
@@ -130,13 +130,13 @@ class StoreMenu extends Component
                                                     </span>
                                                     <p style={{textAlign:'initial', marginLeft:'5%'}}>{product.description}</p>
                                                     
-                                                    {/* {!this.isEmpty(user)?
+                                                    {!this.isEmpty(user)?
                                                         <DeleteModal 
                                                             id={product._id}
-                                                            name={product}
+                                                            name={product.name_en}
 
                                                         />:null
-                                                    }    */}
+                                                    }   
                                                 </div>
                                             <Divider/>
                                             </div>

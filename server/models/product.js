@@ -12,7 +12,7 @@ const FlavourSchema = new Schema({
 
 const MenuSchema = new Schema({
     code: {
-        type: Number,
+        type: String,
         required: true
     },
     name_en: {
@@ -23,7 +23,7 @@ const MenuSchema = new Schema({
         type: String
     },
     price: {
-        type: Number
+        type: String
     },
     flavour: [
         FlavourSchema

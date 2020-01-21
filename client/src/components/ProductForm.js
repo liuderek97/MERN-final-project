@@ -17,6 +17,7 @@ export default class ProductForm extends Component {
         description: '',
         category: '',
         takeaway: false,
+        flavour:[]
       },
       created: false,
       categories: [],
