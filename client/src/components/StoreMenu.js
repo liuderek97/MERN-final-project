@@ -6,13 +6,17 @@ import {
     Divider,
     Grid,
     Table,
+    Button,
+    Modal
 } from 'semantic-ui-react';
 import  {store} from '../Store'
 import AdminDashboard from '../components/AdminDashboard'
+import DeleteModal from './DeleteModal'
+import {connect} from "react-redux"; 
 
 
 
-export default class Home extends Component
+class StoreMenu extends Component
 {
     constructor(props){
         super(props);
@@ -23,7 +27,7 @@ export default class Home extends Component
         }
     }
 
-    componentDidMount() {
+    componentWillMount() {
         fetch('/category/all')
         .then(data => data.json())
         .then((data) => {
@@ -46,6 +50,18 @@ export default class Home extends Component
 
     }
 
+    openModalHandler = () => {
+        this.setState({
+            isShowing: true
+        });
+    }
+
+    closeModalHandler = () => {
+        this.setState({
+            isShowing: false
+        });
+    }
+
     isEmpty(obj) {
         for(var key in obj) {
             if(obj.hasOwnProperty(key))
@@ -59,7 +75,6 @@ export default class Home extends Component
         const {categories, products} = this.state
         let {user} = store.getState()
         console.log(user)
-        console.log(store.getState())
         console.log(this.isEmpty(user))
     
         
@@ -70,6 +85,7 @@ export default class Home extends Component
                 )
             }
         }
+
 
 
         return (
@@ -101,6 +117,7 @@ export default class Home extends Component
                                 <Divider/>
                                 {
                                     products.map((product,index) => {
+                                        console.log(product)
                                         if(product.flavour){
                                             return(
                                                 <div style={{marginBottom:'30px'}}>   
@@ -112,6 +129,14 @@ export default class Home extends Component
                                                         )}
                                                     </span>
                                                     <p style={{textAlign:'initial', marginLeft:'5%'}}>{product.description}</p>
+                                                    
+                                                    {/* {!this.isEmpty(user)?
+                                                        <DeleteModal 
+                                                            id={product._id}
+                                                            name={product}
+
+                                                        />:null
+                                                    }    */}
                                                 </div>
                                             <Divider/>
                                             </div>
@@ -124,6 +149,7 @@ export default class Home extends Component
                                                                 <h1 style={{marginTop:'0px'}}>${product.price}</h1>
                                                             </span>
                                                             <p style={{textAlign:'initial', marginLeft:'5%'}}>{product.description}</p>
+                                                            
                                                         </div>
                                                     <Divider/>
                                                     </div>
@@ -131,7 +157,6 @@ export default class Home extends Component
                                             }
                                     })
                                 }
-
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
@@ -139,3 +164,4 @@ export default class Home extends Component
         )
     }
 }
+export default connect(({user}) => ({user}))(StoreMenu);
