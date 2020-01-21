@@ -30,7 +30,7 @@ export default class Home extends Component
                         
                 </div>
                     
-                <div style={{width: "100%", display: "flex"}}>
+                <div style={{width: "100%", display: "flex", flexWrap: "wrap"}}>
                     <div class="homePanel" id="cafe">
                         Cafe coming soon
                     </div>
