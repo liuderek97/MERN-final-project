@@ -53,19 +53,8 @@ export default class Home extends Component
     render(){
         const {categories, products} = this.state
         let {user} = store.getState()
-            
-        let adminButton = () => {
-            if(!this.isEmpty(user)){
-                return(
-                   <AdminDashboard/>
-                )
-            }
-        }
-
-
         return (
             <Container style={{ width:'100%' }}>
-                {adminButton()}
                 <Grid columns={2}>
                     <Grid.Row>
                         <Grid.Column width={3}>
