@@ -11,6 +11,7 @@ import {
 import { logout } from './utils/Auth';
 import AdminDashboard from '../components/AdminDashboard'
 import DeleteModal from './DeleteModal'
+import EditModal from './EditModal'
 import {store} from '../Store'
 
 export default class Admin extends Component
@@ -105,6 +106,7 @@ export default class Admin extends Component
                                 {
                                     products.map((product,index) => {
                                         if(product.flavour){
+                                            console.log(product)
                                             return(
                                                 <div style={{marginBottom:'30px'}} key={product._id}>   
                                                     <div style={{marginBottom:'30px'}}>
@@ -114,12 +116,25 @@ export default class Admin extends Component
                                                                     <h1 style={{marginTop:'0px'}} key={index}>${flavour.price}</h1>,
                                                             )}
                                                         </span>
-                                                        <p style={{textAlign:'initial', marginLeft:'5%'}}>{product.description}</p>
-                                                        <DeleteModal 
-                                                            id={product._id}
-                                                            name={product.name_en}
-
-                                                        />
+                                                        <p style={{textAlign:'initial', marginLeft:'5%'}}>{product.description}</p>    
+                                                        <Grid 
+                                                            style={{marginTop:'30px', marginBottom:'30px'}}
+                                                            centered
+                                                        >
+                                                            <DeleteModal 
+                                                                id={product._id}
+                                                                name={product.name_en}
+                                                            />
+                                                            <EditModal
+                                                                id={product._id}
+                                                                name_en={product.name_en}
+                                                                name_th={product.name_en}
+                                                                code={product.code}
+                                                                price={product.price}
+                                                                description={product.description}
+                                                                category={product.category[0].name}
+                                                            />
+                                                        </Grid>
                                                     </div>
                                                 <Divider/>
                                                 </div>
