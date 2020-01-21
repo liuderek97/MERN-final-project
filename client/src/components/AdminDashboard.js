@@ -6,7 +6,7 @@ import {
     Button,
     Grid,
     Divider,
-    Icon
+    Icon,
 } from 'semantic-ui-react'
 import ProductForm from './ProductForm'
 import CategoryForm from './CategoryForm'
