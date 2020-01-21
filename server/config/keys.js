@@ -1,7 +1,7 @@
 if (process.env.NODE_ENV === 'production') 
 {
     module.exports = {
-        mongoURI: 'mongodb://localhost/saran-thai'
+        mongoURI: 'mongodb+srv://aidan:derek@saran-thai-lv7zl.mongodb.net/saran-thai?retryWrites=true&w=majority'
     }
 } else 
 {
