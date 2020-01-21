@@ -12,7 +12,7 @@ import AdminDashboard from '../components/AdminDashboard'
 
 
 
-export default class Home extends Component
+export default class StoreMenu extends Component
 {
     constructor(props){
         super(props);

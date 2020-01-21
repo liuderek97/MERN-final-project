@@ -4,9 +4,11 @@
   "description": "## Project Mission",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "server": "node app.js",
     "client": "npm start --prefix client",
-    "dev": "npm start --prefix client & node app.js"
+    "dev": "npm start --prefix client & node app.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
