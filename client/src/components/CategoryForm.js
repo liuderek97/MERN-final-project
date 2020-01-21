@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
-import { Form, Input, Button} from 'semantic-ui-react'
+import { 
+  Form, 
+  Input, 
+  Button,
+  Message 
+} from 'semantic-ui-react'
 
 export default class CategoryForm extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      name: ''
+      created: false,
+      name: '',
+      visible: false
     }
   }
 
@@ -20,15 +27,41 @@ export default class CategoryForm extends Component {
       body: JSON.stringify(this.state)
     }) 
     .then(res => res.json(),
-    this.setState({created:true}),
+    this.setState({
+      created:true,
+      visible: true 
+    
+    }),
+    setTimeout(() => {
+      this.setState({ visible: true })
+    }, 2000),
     console.log(this.state)
     ) 
   }
 
+  // handleDismiss = () => {
+    
+  // }
+
   render() {
+    let created = this.state.created;
+    let successMessage = () => {
+      if(created){
+        return(
+          <Message
+            attached
+            // onDismiss={handleDismiss}
+            header='Congratulations'
+            content='The category has been created'
+          />
+        )
+      }
+    }
+    
     return(
       <Form>
         <Form.Group>
+          {successMessage()}
           <Form.Field
           id='form-input-control-name'
           control={Input}

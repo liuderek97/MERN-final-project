@@ -59,6 +59,7 @@ export default class Home extends Component
         const {categories, products} = this.state
         let {user} = store.getState()
         console.log(user)
+        console.log(store.getState())
         console.log(this.isEmpty(user))
     
         
