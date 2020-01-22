@@ -8,7 +8,7 @@ import {
     Grid
 } from 'semantic-ui-react';
 
-export default class Home extends Component
+export default class StoreMenu extends Component
 {
     constructor(props){
         super(props);

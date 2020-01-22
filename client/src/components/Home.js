@@ -13,7 +13,6 @@ export default class Home extends Component
     render(){
         return (
             <Container style={{ width: '100%' }}>
-    
                 <div id="home-hero">
 
                     <div id='hero-image'></div>
@@ -25,17 +24,13 @@ export default class Home extends Component
                                 state:{ from: this.props.location.pathname }
                             })}>View Menu
                         </Button> 
-
-                    </div>
-                        
+                    </div>   
                 </div>
-                    
-                <div style={{width: "100%", display: "flex", flexWrap: "wrap"}}>
-                    <div className="homePanel" id="cafe">
+                <div style={{width: "100%", display: "flex"}}>
+                    <div class="homePanel" id="cafe">
                         Cafe coming soon
                     </div>
-
-                    <div className="homePanel" id="booking">
+                    <div class="homePanel" id="booking">
                         Bookings available <br />
                         Contact us to book now
                         <Button primary size='huge' className="inverted"
@@ -45,8 +40,6 @@ export default class Home extends Component
                         </Button> 
                     </div>
                 </div>
-
-
             </Container>
         )
     }  
