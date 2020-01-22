@@ -6,7 +6,6 @@ const getAllProducts = async (req, res) =>
     await Product.find().populate('category')
         .then(data =>
         {
-            console.log(data)
             res.json({ data })
         })
         .catch(err => res.status(500).send(err));

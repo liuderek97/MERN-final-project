@@ -12,11 +12,12 @@ import {
     Select,
     TextArea,
     Checkbox
-    
 } from 'semantic-ui-react'
 
-export default class EditModal extends Component {
-	constructor(props){
+export default class EditModal extends Component
+{
+    constructor(props)
+    {
         super(props);
         this.state = {
         form:{
@@ -26,7 +27,7 @@ export default class EditModal extends Component {
             code:props.code,
             description:props.description,
             price: props.price,
-            category: props.category,
+            category: props.category._id,
             takeaway: props.takeaway
         },
         open: false,
@@ -194,7 +195,7 @@ export default class EditModal extends Component {
                   label='Select a category' 
                   control={Select}
                   options={categoryValues}
-                  placeholder={this.state.form.category}
+                  value={this.state.form.category}
                   onChange={(e,{value}) => {
                     let form = this.state.form;
                     form.category = value;

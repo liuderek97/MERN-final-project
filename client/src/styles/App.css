@@ -120,6 +120,18 @@
     background-size: cover;
 }
 
+#about-1 {
+    background: url('/assets/images/about_1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#about-2 {
+    background: url('/assets/images/about_2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .storeProduct span {
     font-size: 26px;
     font-weight: bold;
@@ -135,9 +147,21 @@
     color: #8a8a8a;
 }
 
+.storeProduct .code::before {
+    content: '#';
+    vertical-align: bottom;
+    font-size: 14px; 
+}
+
 .storeProduct .price {
     margin-left: auto;
     margin-right: 10px;
+}
+
+.storeProduct .price::before{
+    content: '$';
+    vertical-align: bottom;
+    font-size: 14px; 
 }
 
 .storeProduct p {
@@ -167,6 +191,11 @@ footer {
     align-items: center;
     background-color: #1B1C1D;
     color: #FFF;
+}
+
+#googlemap {
+    width: 100%;
+    min-height: 350px;
 }
 
 

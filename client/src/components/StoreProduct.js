@@ -6,8 +6,8 @@ import { Grid, Divider } from 'semantic-ui-react';
 export default function Product(props)
 {
     return (
-        <div className="storeProduct" style={{ marginBottom: '15px', padding: "15px" }} >
-            <div className="category">{ props.category }</div>
+        <div className="storeProduct" style={{ padding: "5px 15px" }} >
+            <div className="category">{ props.category.name }</div>
             <div style={{ display: 'flex', width: '100%' }}>
                 <span className="code" style={{minWidth: '50px'}}>{ props.code }</span>
                 <span className="name" style={{minWidth: '100px'}}>{ props.name }</span>

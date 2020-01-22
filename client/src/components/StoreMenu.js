@@ -4,7 +4,6 @@ import Category from './StoreCategory';
 
 import { 
     Container,
-    Menu,
     Header,
     Divider,
     Grid
@@ -106,7 +105,7 @@ export default class StoreMenu extends Component
                                     code={product.code}
                                     name={product.name_en}
                                     price={product.price}
-                                    category={product.category && product.category.name}
+                                    category={product.category}
                                     description={product.description}
                                 />
                             ))

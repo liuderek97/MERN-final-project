@@ -4,8 +4,7 @@ import {
     Button,
     Grid,
     Header,
-    Divider,
-    Menu
+    Divider
 } from 'semantic-ui-react';
 import { logout } from './utils/Auth';
 import AdminDashboard from '../components/AdminDashboard'
@@ -119,7 +118,7 @@ export default class Admin extends Component
                                         code={product.code}
                                         name={product.name_en}
                                         price={product.price}
-                                        category={product.category && product.category.name}
+                                        category={product.category}
                                         description={product.description}
                                         editable
                                     />
