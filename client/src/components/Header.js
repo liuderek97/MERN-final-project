@@ -4,15 +4,14 @@ import history from '../history'
 import {store} from '../Store'
 import {NavLink} from "react-router-dom";
 import _ from 'lodash';
-import {connect} from "react-redux"; 
+import { connect } from "react-redux"; 
+
 class Header extends Component
 {
     constructor(props)
     {
         super(props);
         this.state = {
-
-            active: 'home',
             refresh: false
         }
     }
@@ -24,17 +23,13 @@ class Header extends Component
         }
         return true;
     }
-    
 
     makeMenuItems = () => {
         const {user} = store.getState()
-        console.log(user)
         let menuItems = [{text:'Home', to:'/home'}, {text:'Menu', to:'/menu'}, {text:'About', to:'/about'}]
 
-
         if(!this.isEmpty(user)){
-            menuItems = [...menuItems, {text: 'Admin', to: '/admin'}];  
-
+            menuItems = [...menuItems, { text: 'Admin', to: '/admin' } ];  
         }
 
         const uniqueMenuItems = _.uniqBy([...menuItems, ...menuItems], item => item.to);
@@ -53,12 +48,6 @@ class Header extends Component
         this.setState({ activeItem: path })
     }
 
-    handleClick = (e, { name }) =>
-    {
-        this.setState({ active: name })
-        history.push({ pathname: name });
-    }
-    
     render() 
     {
         return (

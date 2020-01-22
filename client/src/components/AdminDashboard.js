@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import {Redirect} from "react-router-dom";
 import {
     Segment,
     Modal,
@@ -56,5 +55,4 @@ export default class AdminDashboard extends Component {
             </Segment>
         )
     }
-
 }

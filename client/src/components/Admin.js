@@ -3,16 +3,14 @@ import {
     Container,
     Button,
     Grid,
-    Table,
     Header,
     Divider,
     Menu
 } from 'semantic-ui-react';
 import { logout } from './utils/Auth';
 import AdminDashboard from '../components/AdminDashboard'
-import { store } from '../Store'
 import Product from './StoreProduct';
-
+import Category from './StoreCategory';
 
 export default class Admin extends Component
 {
@@ -21,7 +19,9 @@ export default class Admin extends Component
         super(props)
         this.state = {
             categories:[],
-			products:[],
+            filterProducts: [],
+            products: [],
+            selectedCategory: 'all'
         }
     }
 
@@ -38,7 +38,8 @@ export default class Admin extends Component
         .then(data => data.json())
         .then((data) => {
             let products = data.data
-            this.setState({products:products})
+            this.setState({ products: products })
+            this.setState({ filterProducts: products })
         })
         .catch((err) => {
             console.log(err)
@@ -53,9 +54,28 @@ export default class Admin extends Component
         return true;
     }
 
+    filterProducts = id =>
+    {
+        const { products } = this.state;
+
+        let filterProducts = products;
+
+        if (id)
+        {
+            filterProducts = products.filter(product => product.category._id === id);
+            this.setState({selectedCategory: id})
+        } else
+        {
+            this.setState({selectedCategory: 'all'})
+        }
+
+        this.setState({ filterProducts })
+        this.setState({ active: id })
+    }
+
     render()
     {
-        const {categories, products} = this.state
+        const {categories, filterProducts, selectedCategory} = this.state
             
         return (
            <Container style={{ width: '100%' }}>
@@ -67,34 +87,39 @@ export default class Admin extends Component
                  </Button>
                 <AdminDashboard/>
                 <Grid stackable columns="equal">
-                    <Grid.Column width={3} style={{minWidth: "250px"}}>
-                        <Menu 
-                            vertical 
-                            text
-                            style={{marginLeft:'30px', marginTop:'15px',marginRight:'350px', marginBottom:'50px'}}
-                            >
-                            <Menu.Item><Header as='h2'>Categories</Header></Menu.Item>
-                            <Divider />
-                            {categories.map((category, index) =>
-                            {
-                                return(
-                                    <Menu.Item selectable="true" key={index}>{category.name}</Menu.Item>
-                                )
-                            })}
-                        </Menu>                        
+
+                <Grid.Column width={3} style={{ minWidth: "250px" }}>
+                    <Header as='h2' style={{marginTop:'22px'}}>Categories</Header>
+                    <Divider />
+                    <Category
+                        name="All"
+                        id="all"
+                        callback={() => this.filterProducts()}
+                        active={selectedCategory === 'all'}
+                    />
+                    {categories.map(category => ( 
+                        <Category
+                            key={category._id}
+                            id={category._id}
+                            name={category.name}
+                            callback={() => this.filterProducts(category._id)}
+                            active={selectedCategory === category._id}
+                        />
+                    ))}
                     </Grid.Column>
+
                     <Grid.Column style={{ marginLeft: '10px' }} width={12}>
-                        <Header as='h2' style={{marginTop:'20px'}}>Menu</Header>
+                        <Header as='h2' style={{marginTop:'22px'}}>Menu</Header>
                         <Divider />
                             {
-                                products.map((product) => (
+                                filterProducts.map((product) => (
                                     <Product
                                         key={product._id}
                                         id={product._id}
                                         code={product.code}
                                         name={product.name_en}
                                         price={product.price}
-                                        category={product.category[0].name}
+                                        category={product.category && product.category.name}
                                         description={product.description}
                                         editable
                                     />

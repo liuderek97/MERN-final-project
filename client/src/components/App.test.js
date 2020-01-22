@@ -1,5 +1,4 @@
 import React from 'react';
-// setup file
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { shallow } from 'enzyme';
@@ -63,9 +62,7 @@ test("counter increments on button click", () =>
     const button = findByAttr(wrapper, 'inc-button');
     button.simulate('click');
 
-    const counterDisplay = findByAttr(wrapper, 'counter-display');
-    // console.log(counterDisplay.debug());
-    
+    const counterDisplay = findByAttr(wrapper, 'counter-display');    
     expect(counterDisplay.text()).toContain(counter + 1)
 });
 
@@ -79,7 +76,5 @@ test("counter decrements on button click", () =>
     button.simulate('click');
 
     const counterDisplay = findByAttr(wrapper, 'counter-display');
-    console.log(counterDisplay.debug());
-
     expect(counterDisplay.text())
 });

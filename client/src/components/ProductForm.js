@@ -47,8 +47,9 @@ export default class ProductForm extends Component {
     .then(res => {
       let showError, showMessage, message;
       res.json()
-      console.log(res)
-      if(res.status === 400){
+
+        if (res.status === 400)
+        {
         message = 'The product could not be added please try creating a product again'
         showError =true
       }else if(res.status === 200){
@@ -75,8 +76,6 @@ export default class ProductForm extends Component {
     
 
     let {categories, showError, showMessage} = this.state;
-    console.log(categories)
-    console.log(this.state.form)
     let values = []
     categories.map((category, index) => {
       values[index] = {id: category._id, name: category.name}

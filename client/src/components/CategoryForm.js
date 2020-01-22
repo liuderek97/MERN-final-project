@@ -25,7 +25,6 @@ export default class CategoryForm extends Component {
     .then(res => {
       let showError, showMessage, message;
       res.json()
-      console.log(res)
       if(res.status === 400){
         message = 'The category could not be added please try creating a product again'
         showError =true

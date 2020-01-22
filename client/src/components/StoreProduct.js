@@ -9,7 +9,7 @@ export default function Product(props)
         <div className="storeProduct" style={{ marginBottom: '15px', padding: "15px" }} >
             <div className="category">{ props.category }</div>
             <div style={{ display: 'flex', width: '100%' }}>
-                <span className="code" style={{minWidth: '40px'}}>{ props.code }</span>
+                <span className="code" style={{minWidth: '50px'}}>{ props.code }</span>
                 <span className="name" style={{minWidth: '100px'}}>{ props.name }</span>
                 <span className="price" style={{minWidth: '40px'}}>{ props.price }</span>
             </div>
@@ -30,7 +30,7 @@ export default function Product(props)
                         code={props.code}
                         price={props.price}
                         description={props.description}
-                        category={props.category[0].name}
+                        category={props.category}
                     />
                 </Grid>
             }
@@ -39,4 +39,3 @@ export default function Product(props)
         </div>
     )
 }
-

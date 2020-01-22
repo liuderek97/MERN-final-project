@@ -26,11 +26,11 @@ export default class Home extends Component
                         </Button> 
                     </div>   
                 </div>
-                <div style={{width: "100%", display: "flex"}}>
-                    <div class="homePanel" id="cafe">
+                <div style={{width: "100%", display: "flex", flexWrap: "wrap"}}>
+                    <div className="homePanel" id="cafe">
                         Cafe coming soon
                     </div>
-                    <div class="homePanel" id="booking">
+                    <div className="homePanel" id="booking">
                         Bookings available <br />
                         Contact us to book now
                         <Button primary size='huge' className="inverted"

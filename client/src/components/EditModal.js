@@ -14,28 +14,27 @@ import {
     Checkbox
     
 } from 'semantic-ui-react'
-import history from '../history'
-
 
 export default class EditModal extends Component {
 	constructor(props){
-    super(props);
-    this.state = {
-      form:{
-        id:props.id,
-        name_en:props.name_en,
-        name_th:props.name_en,
-        code:props.code,
-        description:props.description,
-        price: props.price,
-        category: props.category
-      },
-      open: false,
-      showError: false,
-      showMessage:false,
-      message:'',
-      categories: []
-    }
+        super(props);
+        this.state = {
+        form:{
+            id:props.id,
+            name_en:props.name_en,
+            name_th:props.name_en,
+            code:props.code,
+            description:props.description,
+            price: props.price,
+            category: props.category,
+            takeaway: props.takeaway
+        },
+        open: false,
+        showError: false,
+        showMessage:false,
+        message:'',
+        categories: []
+        }
     }
 
     componentDidMount(){
@@ -65,7 +64,6 @@ export default class EditModal extends Component {
       .then(res => {
         let showError, showMessage, message;
         res.json()
-        console.log(res)
         if(res.status === 400){
           message = 'The product could not be edited please try again'
           showError =true
@@ -122,11 +120,10 @@ export default class EditModal extends Component {
                 <Link to='/menu'>Click here to be redirected to the menu</Link>
               </Message>
             )
-           
           }
         }
-        console.log(this.state.form)
-        return(
+
+        return (
             <div>
             <Button onClick={this.closeConfigShow(true, true)}>
                 Edit Dish

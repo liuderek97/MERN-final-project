@@ -36,7 +36,6 @@ export default class DeleteModal extends Component {
       .then(res => {
         let showError, showMessage, message;
         res.json()
-        console.log(res)
         if(res.status === 400){
           message = 'The product could not be deleted please try again'
           showError =true

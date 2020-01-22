@@ -1,5 +1,14 @@
 # MERN Final Project 
 
+## Github
+https://github.com/liuderek97/MERN-final-project
+
+## Website
+https://saran-thai.herokuapp.com/
+
+## Presnetation
+https://docs.google.com/presentation/d/1A-xOJJT9GIimBMolg3eWhPmMezfj7Df2rMgq9Arwxfk/edit#slide=id.p
+
 ## Project Mission
 
 Develop a new, innovative and dynamic website to serve as the online forward facing representative of the Saran Thai brand, people, culture, service offerings and most importantly its commercial strategic objectives. 

@@ -17,7 +17,6 @@ mongoose.connect( keys.mongoURI, {
     useUnifiedTopology: true,
     useFindAndModify: false
 })
-
 .then(() => console.log('MongoDb connection'))
 .catch(err => console.log(err));
 

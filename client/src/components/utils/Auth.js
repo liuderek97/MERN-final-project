@@ -3,7 +3,6 @@ import history from '../../history';
 import {removeToken, removeUserDetails, storeUserDetails} from '../auth/actions';
 import * as jwtDecode from 'jwt-decode';
 
-
 const msTillExpiry = (token) => {
   let d = jwtDecode(token);
   let now = Date.now();
@@ -19,11 +18,6 @@ const hrsTillExpiry = (token) => {
 const isExpired = (token) => {
   return hrsTillExpiry(token) <= 0; // if token <= 0, force re-login.
 };
-
-// const nearingExpiry = (token) => {
-//   let diff = hrsTillExpiry(token);
-//   return diff > 0 && diff < (5 * 24); // if token expires < 5 days, refresh it.
-// };
 
 export const loggedIn = () => {
   const token = store.getState().token;
@@ -41,9 +35,7 @@ export const fetchUserDetails = () => {
   return (
     fetch('auth/user')
   .then(({data}) => {
-    console.log(data)
     store.dispatch(storeUserDetails(data));
-    
   })
   )
 };

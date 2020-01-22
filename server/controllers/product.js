@@ -4,7 +4,11 @@ const Product = mongoose.model('products');
 const getAllProducts = async (req, res) => 
 {
     await Product.find().populate('category')
-        .then(data => res.json({ data }))
+        .then(data =>
+        {
+            console.log(data)
+            res.json({ data })
+        })
         .catch(err => res.status(500).send(err));
 }
 
@@ -41,8 +45,8 @@ const createProduct = (req, res) =>
 const updateProduct = async (req, res) => 
 {
     let { id } = req.params;
-    let { name_en } = req.body;
-    await Product.findOneAndUpdate({_id: id }, { $set: { name_en } }, { new: true })
+    let { name_en, name_th, code, description, price, category, takeaway } = req.body;
+    await Product.findOneAndUpdate({_id: id }, { $set: { name_en, name_th, code, description, price, category, takeaway } }, { new: true })
         .then(data => res.json({ data }))
         .catch(err => res.status(500).send(err))
 }
