@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
 import {
-    // Card,
-    // Menu,
-    Segment,
     Header,
     Modal,
     Button,
@@ -94,7 +91,7 @@ export default class EditModal extends Component {
   
     render(){
 
-        const { open, closeOnEscape, closeOnDimmerClick, id, categories, name, showError, showMessage} = this.state
+        const { open, closeOnEscape, closeOnDimmerClick, categories, name, showError, showMessage} = this.state
         
         let values = []
         categories.map((category, index) => {
@@ -103,7 +100,7 @@ export default class EditModal extends Component {
     
         let categoryValues = []
 
-        values.map((value,index) => {
+        values.map((value) => {
           let obj ={}
           obj['key'] = value.id
           obj['value'] = value.id

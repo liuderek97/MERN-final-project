@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import history from '../history'
-import { Form, Input, TextArea, Button, Select, Checkbox,Grid, Message,Icon } from 'semantic-ui-react'
+import { Form, Input, TextArea, Select, Checkbox,Grid, Message,Icon } from 'semantic-ui-react'
 
 
 export default class ProductForm extends Component {

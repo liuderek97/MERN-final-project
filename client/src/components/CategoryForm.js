@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Form, Input, Button, Message, Icon} from 'semantic-ui-react'
-import history from '../history'
 
 export default class CategoryForm extends Component {
   constructor(props) {

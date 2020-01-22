@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
 import {
-    // Card,
-    // Menu,
-    Segment,
     Header,
     Modal,
     Button,
@@ -12,7 +9,6 @@ import {
     Icon
     
 } from 'semantic-ui-react'
-import { promised } from 'q';
 
 export default class DeleteModal extends Component {
 	constructor(props){
@@ -66,7 +62,7 @@ export default class DeleteModal extends Component {
   
     render(){
 
-        const { open, closeOnEscape, closeOnDimmerClick, id, name, showError, showMessage} = this.state
+        const { open, closeOnEscape, closeOnDimmerClick, name, showError, showMessage} = this.state
         
         const message = () => {
           if(showError){
