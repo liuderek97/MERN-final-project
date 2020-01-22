@@ -76,7 +76,7 @@ export default class Home extends Component
                         {
                             products.map(product =>
                             {
-                                return ([
+                                return (
                                     <Product
                                         key={product._id}
                                         code={product.code}
@@ -85,7 +85,7 @@ export default class Home extends Component
                                         category={product.category[0].name}
                                         description={product.description}
                                     />
-                                ])
+                                )
                             })
                         }
 

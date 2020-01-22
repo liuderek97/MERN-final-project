@@ -8,12 +8,10 @@ import About from './About';
 import StoreMenu from './StoreMenu';
 import Admin from './Admin';
 import Login from './Login';
-import AdminDashboard from './AdminDashboard';
 import history from '../history'
 import {PersistGate} from 'redux-persist/integration/react';
 import {store, persistor} from '../Store';
 import {Provider} from 'react-redux'
-
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
     <Route {...rest} render={(props) => (
@@ -37,7 +35,6 @@ export default function App()
                             <Route path='/menu' component={ StoreMenu } />
                             <Route path='/about' component={ About } />
                             <Route path='/login' component={ Login } />
-                            <Route path='/admin-dashboard' component={AdminDashboard} />
                             <PrivateRoute path='/admin' component={ Admin } />
                             <Redirect from='*' to='/home' />
                         </Switch>

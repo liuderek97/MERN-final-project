@@ -79,7 +79,6 @@ export default class EditModal extends Component {
           message
         })
       })
-
     }
     
     handleDismiss = () => {
@@ -233,14 +232,14 @@ export default class EditModal extends Component {
 
                   <Form.Button
                     id='form-button-control-add-dish'
-                    content='Edit Dish'
+                    content='Save Changes'
                     onClick={() => this.editItem()}
                   />
                   <Form.Button
                     id='form-button-control-add-dish'
-                    content='Go to Menu'
+                    content='Cancel'
                     onClick={() => {
-                      history.push('/menu')
+                        this.close()
                     }}
                     />
                 </Grid>
@@ -251,5 +250,4 @@ export default class EditModal extends Component {
                       
         )
     }
-
 }
