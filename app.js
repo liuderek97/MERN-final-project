@@ -38,6 +38,10 @@ app.use((req, res, next) => { res.locals.user = req.user || null; next(); });
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/auth', require('./server/routes/auth') );
+app.use('/menu', require('./server/routes/product'));
+app.use('/category', require('./server/routes/category'));
+
 if (process.env.NODE_ENV === 'production') 
 {
     app.use(express.static(path.join(__dirname, 'client/build')));
@@ -47,9 +51,6 @@ if (process.env.NODE_ENV === 'production')
     });
 }
 
-app.use('/auth', require('./server/routes/auth') );
-app.use('/menu', require('./server/routes/product'));
-app.use('/category', require('./server/routes/category'));
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`started server on port ${port}`));
