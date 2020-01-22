@@ -15,6 +15,5 @@ export const storeUserDetails = data => {
 };
 
 export const removeUserDetails = () => {
-  console.log("REMOVE USER")
   return {type: actionType.REMOVE_USER};
 };

@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import history from '../history'
-import { Form, Input, TextArea, Button, Select, Checkbox, SearchCategory } from 'semantic-ui-react'
-import { pathToFileURL } from 'url'
-import {Redirect} from 'react-router-dom'
+import { Form, Input, TextArea, Select, Checkbox,Grid, Message,Icon } from 'semantic-ui-react'
+
 
 export default class ProductForm extends Component {
   constructor(props) {
@@ -17,9 +16,12 @@ export default class ProductForm extends Component {
         description: '',
         category: '',
         takeaway: false,
+        flavour:[]
       },
-      created: false,
       categories: [],
+      showError: false,
+      showMessage:false,
+      message:''
     }
   }
 
@@ -32,8 +34,9 @@ export default class ProductForm extends Component {
     })
   }
 
+  
   submitForm = async () => {
-    await fetch('/menu/products', {
+      await fetch('/menu/products', {
         method: 'POST',
         cache: 'no-cache',
         headers: {
@@ -41,14 +44,37 @@ export default class ProductForm extends Component {
         },
         body: JSON.stringify(this.state.form)
     })
-    .then(res => res.json(),
-      this.setState({created:true})
-    )
+    .then(res => {
+      let showError, showMessage, message;
+      res.json()
+      console.log(res)
+      if(res.status === 400){
+        message = 'The product could not be added please try creating a product again'
+        showError =true
+      }else if(res.status === 200){
+        message = 'Congratulation You have successfully added a dish to the menu. Go to the menu page to checkout your new dishes or clear the form and add more dishes'
+        showMessage = true;
+      }
+      
+      this.setState({
+        showError,
+        showMessage,
+        message
+      })
+    })
+  }
+
+  handleDismiss = () => {
+    this.setState({ 
+      showMessage: false,
+      showError: false
+     })
   }
 
   render() {
+    
 
-    let {categories, created} = this.state;
+    let {categories, showError, showMessage} = this.state;
     console.log(categories)
     console.log(this.state.form)
     let values = []
@@ -66,13 +92,24 @@ export default class ProductForm extends Component {
       categoryValues.push(obj)
     })
 
-    if(created){
-      history.push({pathname:'/menu'})
-    } 
+   const message = () => {
+      if(showError){
+        return(
+          <Message onDismiss={this.handleDismiss} negative><Icon size='large' name='thumbs down'/>{this.state.message}</Message>
+        )
+      }else if(showMessage){
+        return(
+          <Message onDismiss={this.handleDismiss}  positive><Icon size='large' name='thumbs up'/>{this.state.message}</Message>
+        )
+       
+      }
+    }
+
 
     return(
 
     <Form>
+    {message()}
       <Form.Group widths='equal'>
         <Form.Field
           id='form-input-control-name'
@@ -151,12 +188,20 @@ export default class ProductForm extends Component {
         }}
          />
       </Form.Field>
-      <Form.Field
+      <Grid centered>
+      <Form.Button
         id='form-button-control-add-dish'
-        control={Button}
         content='Add Dish'
         onClick={() => this.submitForm()}
       />
+      <Form.Button
+        id='form-button-control-add-dish'
+        content='Go to Menu'
+        onClick={() => {
+          history.push('/menu')
+        }}
+        />
+        </Grid>
     </Form>
     )
   }

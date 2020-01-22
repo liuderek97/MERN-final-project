@@ -79,7 +79,6 @@
     font-size: 7rem;
     font-weight: bolder;
     -webkit-text-stroke: 2px #1B1C1D;
-    text-stroke: 2px #1B1C1D;
 }
 
 #hero-image{
@@ -96,9 +95,9 @@
 }
 
 .homePanel {
-    width: 50%;
     height: 50vh;
     display: inline-flex;
+    flex-grow: 1;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -106,7 +105,6 @@
     font-size: 52px;
     line-height: 60px;
     -webkit-text-stroke: 1px #1B1C1D;
-    text-stroke: 1px #1B1C1D;
     font-weight: bolder;
 }
 
@@ -122,6 +120,30 @@
     background-size: cover;
 }
 
+.storeProduct span {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.storeProduct .category {
+    margin: 10px;
+    color: #8a8a8a;
+    text-align: left;
+}
+
+.storeProduct .code {
+    color: #8a8a8a;
+}
+
+.storeProduct .price {
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.storeProduct p {
+    margin: 10px 5px;
+    font-size: 18px;
+}
 
 footer {
     height: 50vh;
@@ -130,4 +152,15 @@ footer {
     align-items: center;
     background-color: #1B1C1D;
     color: #FFF;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .ui.container {
+        margin-left: 0!important;
+        margin-right: 0!important;
+    }
+    .ui.stackable.grid {
+        width: 100%;
+    }
 }

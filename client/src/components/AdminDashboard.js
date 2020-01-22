@@ -1,22 +1,18 @@
 import React, { Component } from 'react';
 // import {Redirect} from "react-router-dom";
 import {
-    // Card,
-    // Menu,
     Segment,
-    Header,
     Modal,
     Button,
     Grid,
-    Divider
+    Divider,
+    Icon,
 } from 'semantic-ui-react'
 import ProductForm from './ProductForm'
 import CategoryForm from './CategoryForm'
 
 export default class AdminDashboard extends Component {
-	constructor(props){
-		super(props);
-    }
+
 	openModalHandler = () => {
         this.setState({
             isShowing: true
@@ -39,7 +35,7 @@ export default class AdminDashboard extends Component {
                             <Modal 
                             dimmer={'inverted'}
                             centered={false}
-                            trigger={<Button primary styling={{marginTop:'10px'}} onClick={() => {this.openModalHandler('inverted')}}>Add Dish</Button>}>
+                            trigger={<Button primary styling={{marginTop:'10px'}} onClick={() => {this.openModalHandler('inverted')}}><Icon name='add'/>Add Dish</Button>}>
                             <Modal.Content>
                                 <ProductForm/>
                             </Modal.Content>
@@ -49,7 +45,7 @@ export default class AdminDashboard extends Component {
                             <Modal 
                             dimmer={'inverted'}
                             centered={false}
-                            trigger={<Button primary onClick={() => {this.openModalHandler()}}>Create Category</Button>}>
+                            trigger={<Button primary onClick={() => {this.openModalHandler()}}><Icon name='add'/>Create Category</Button>}>
                                 <Modal.Content>
                                     <CategoryForm/>
                                 </Modal.Content>

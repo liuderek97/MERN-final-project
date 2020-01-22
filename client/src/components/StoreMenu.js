@@ -1,16 +1,12 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
+import Product from './StoreProduct';
 import { 
     Container,
     Menu,
     Header,
     Divider,
-    Grid,
-    Table,
+    Grid
 } from 'semantic-ui-react';
-import  {store} from '../Store'
-import AdminDashboard from '../components/AdminDashboard'
-
-
 
 export default class StoreMenu extends Component
 {
@@ -30,9 +26,7 @@ export default class StoreMenu extends Component
         	let categories = data.data
 			this.setState({categories:categories})
         })
-        .catch(err => {
-        	console.log(err)
-        })
+        .catch(err => { console.log(err) })
 
         fetch('/menu/products/all')
         .then(data => data.json())
@@ -43,7 +37,6 @@ export default class StoreMenu extends Component
         .catch((err) => {
             console.log(err)
         })
-
     }
 
     isEmpty(obj) {
@@ -56,83 +49,47 @@ export default class StoreMenu extends Component
 
  
     render(){
-        const {categories, products} = this.state
-        let {user} = store.getState()
-        console.log(user)
-        console.log(this.isEmpty(user))
-    
-        
-        let adminButton = () => {
-            if(!this.isEmpty(user)){
-                return(
-                   <AdminDashboard/>
-                )
-            }
-        }
-
-
+        const { categories, products } = this.state
+        console.log(products)
         return (
             <Container style={{ width:'100%' }}>
-                {adminButton()}
-                <Grid columns={2}>
-                    <Grid.Row>
-                        <Grid.Column width={3}>
+                <Grid stackable columns="equal">
+                    <Grid.Column width={3} style={{minWidth: "250px"}}>
                         <Menu 
                             vertical 
                             text
-                            style={{marginLeft:'30px', marginTop:'15px',marginRight:'0px', marginBottom:'50px'}}
+                            style={{marginLeft:'30px', marginTop:'15px',marginRight:'350px', marginBottom:'50px'}}
                             >
                             <Menu.Item><Header as='h2'>Categories</Header></Menu.Item>
                             <Divider />
-                            {categories.map((category) => {
+                            {categories.map((category, index) =>
+                            {
                                 return(
-                                	<Menu.Item selectable key={category.id}>{category.name}</Menu.Item>
+                                    <Menu.Item selectable="true" key={index}>{category.name}</Menu.Item>
                                 )
                             })}
                         </Menu>                        
-                        </Grid.Column>
-                        <Grid.Column style={{marginLeft:'10px'}} width={12}>
-                                <Table basic='very' style={{marginTop:'32px'}}>
-                                        <Table.HeaderCell textAlign='center'>Name</Table.HeaderCell>
-                                        <Table.HeaderCell textAlign='center'>Category Name</Table.HeaderCell>
-                                        <Table.HeaderCell textAlign='center'>Price</Table.HeaderCell>
-                                </Table>
-                                <Divider/>
-                                {
-                                    products.map((product,index) => {
-                                        if(product.flavour){
-                                            return(
-                                                <div style={{marginBottom:'30px'}}>   
-                                                <div style={{marginBottom:'30px'}}>
-                                                    <span style={{display:'flex', width:'100%'}}>
-                                                        <h1 style={{marginRight:'68%', marginLeft:'5%'}}>{product.name_en}</h1>
-                                                        {product.flavour.map((flavour) =>
-                                                                <h1 style={{marginTop:'0px'}}>${flavour.price}</h1>,
-                                                        )}
-                                                    </span>
-                                                    <p style={{textAlign:'initial', marginLeft:'5%'}}>{product.description}</p>
-                                                </div>
-                                            <Divider/>
-                                            </div>
-                                            ) }else{
-                                                return(    
-                                                    <div style={{marginBottom:'30px'}}>   
-                                                        <div style={{marginBottom:'30px'}}>
-                                                            <span style={{display:'flex', width:'100%'}}>
-                                                                <h1 style={{marginRight:'68%', marginLeft:'5%'}}>{product.name_en}</h1>
-                                                                <h1 style={{marginTop:'0px'}}>${product.price}</h1>
-                                                            </span>
-                                                            <p style={{textAlign:'initial', marginLeft:'5%'}}>{product.description}</p>
-                                                        </div>
-                                                    <Divider/>
-                                                    </div>
-                                                )       
-                                            }
-                                    })
-                                }
+                    </Grid.Column>
+                    <Grid.Column>
+                        <Header as='h2' style={{marginTop:'20px'}}>Menu</Header>
+                        <Divider />
+                        {
+                            products.map(product =>
+                            {
+                                return ([
+                                    <Product
+                                        key={product._id}
+                                        code={product.code}
+                                        name={product.name_en}
+                                        price={product.price}
+                                        category={product.category[0].name}
+                                        description={product.description}
+                                    />
+                                ])
+                            })
+                        }
 
-                        </Grid.Column>
-                    </Grid.Row>
+                    </Grid.Column>
                 </Grid>
             </Container>
         )
